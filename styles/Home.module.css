@@ -40,12 +40,14 @@
 .social {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .social a {
   color: #0070f3;
   text-decoration: none;
   margin: 10px;
+  max-height: 42px;
 }
 
 .fa {
