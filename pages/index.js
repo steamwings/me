@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import 'font-awesome/css/font-awesome.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faGithub, faKeybase, faYoutube,  } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faDollarSign } from '@fortawesome/free-solid-svg-icons'
@@ -54,7 +54,7 @@ export default function Home() {
           >
             <h2>&#x1f4dc; Source &rarr;</h2>
             <p>
-              See the source code, bootstrapped with Next.js
+              See this site's source code, bootstrapped with Next.js
             </p>
           </a>
 
