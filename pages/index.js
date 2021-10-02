@@ -18,13 +18,16 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
+          <a href="https://www.bible.com/bible/59/JHN.18.36-37.ESV">
           Living like Jesus is &#x1f451;
+          </a>
         </p>
 
         <div className={styles.subtitle}>
           <a href="https://twitter.com/zweather">Twitter</a>
           &nbsp;|&nbsp;<a href="https://github.com/steamwings">GitHub</a>
           &nbsp;|&nbsp;<a href="https://keybase.io/zweather">Keybase</a>
+          &nbsp;|&nbsp;<a href="mailto:zanderweather@outlook.com">Email</a>
           {/* &nbsp;|&nbsp;<a href="https://venmo.com/u/zweather">Venmo</a> */}
         </div>
 
@@ -37,17 +40,17 @@ export default function Home() {
           <Link href="/skills" className={styles.card}>
             <a className={styles.card}>
               <h2> &#x1f4bb; Skills &rarr;</h2>
-              <p>Read about my projects and the tech I&apos;ve used.</p>
+              <p>Read about my projects and the tech I&apos;ve used</p>
             </a>
           </Link>
 
           <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
+            href="https://github.com/steamwings/me"
             className={styles.card}
           >
             <h2>&#x1f4dc; Source &rarr;</h2>
             <p>
-              See the source code for this site.
+              See the source code, bootstrapped with Next.js
             </p>
           </a>
 
@@ -56,7 +59,7 @@ export default function Home() {
             className={styles.card}
           >
             <h2>&#x1f511; Keybase &rarr;</h2>
-            <p>Encrypted chat me and more.</p>
+            <p>Encrypted chat and cryptographic proofs</p>
           </a>
         </div>
       </main>
