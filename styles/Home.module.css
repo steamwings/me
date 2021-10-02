@@ -40,6 +40,11 @@
 .subtitle a {
   color: #0070f3;
   text-decoration: none;
+  margin: 10px;
+}
+
+.fa {
+  size: "lg";
 }
 
 .title a:hover,
