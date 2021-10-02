@@ -26,7 +26,7 @@ export default function Home() {
           </a>
         </p>
 
-        <div className={styles.subtitle}>
+        <div className={styles.social}>
           <a href="https://twitter.com/zweather"><FontAwesomeIcon size="lg" icon={faTwitter} /></a>
           <a href="https://github.com/steamwings"><FontAwesomeIcon size="lg" icon={faGithub} /></a>
           <a href="https://www.youtube.com/channel/UCYtpQXhep8dADXhU11xsBXA"><FontAwesomeIcon size="lg" icon={faYoutube}/></a>
