@@ -29,7 +29,7 @@ export default function Home() {
         <div className={styles.social}>
           <a href="https://twitter.com/zweather" aria-label="Twitter link"><FontAwesomeIcon size="lg" icon={faTwitter} /></a>
           <a href="https://github.com/steamwings" aria-label="Github link"><FontAwesomeIcon size="lg" icon={faGithub} /></a>
-          <a href="https://www.youtube.com/channel/UCYtpQXhep8dADXhU11xsBXA" aria-lable="Youtube link"><FontAwesomeIcon size="lg" icon={faYoutube}/></a>
+          <a href="https://www.youtube.com/channel/UCYtpQXhep8dADXhU11xsBXA" aria-label="Youtube link"><FontAwesomeIcon size="lg" icon={faYoutube}/></a>
           <a href="https://venmo.com/u/zweather" aria-label="Venmo link"><FontAwesomeIcon size="lg" icon={faDollarSign} /></a>
           <a href="mailto:zanderweather@outlook.com" aria-label="email link"><FontAwesomeIcon size="lg" icon={faEnvelope} /></a>
           <a href="https://keybase.io/zweather" aria-label="Keybase link"><FontAwesomeIcon size="lg" icon={faKeybase} /></a>
