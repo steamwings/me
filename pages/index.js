@@ -54,7 +54,7 @@ export default function Home() {
           >
             <h2>&#x1f4dc; Source &rarr;</h2>
             <p>
-              See this site's source code, bootstrapped with Next.js
+              See this site&apos;s source code, bootstrapped with Next.js
             </p>
           </a>
 
