@@ -37,7 +37,7 @@ export default function Home() {
           <Link href="/skills" className={styles.card}>
             <a className={styles.card}>
               <h2> &#x1f4bb; Skills &rarr;</h2>
-              <p>Read about my projects and the tech I've used.</p>
+              <p>Read about my projects and the tech I&apos;ve used.</p>
             </a>
           </Link>
 
