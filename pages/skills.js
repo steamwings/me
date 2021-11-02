@@ -7,7 +7,7 @@ export default function CV() {
       <h1>Skills</h1>
       <p className={utilStyles.small}>This list is not exhaustive.&nbsp;
       <a className={utilStyles.linkBlue} href="mailto:contact@zweather.me" aria-label="email link">Ask me</a>
-      &nbsp;if I've used your technology.</p>
+      &nbsp;if I&apos;ve used your technology.</p>
       <div className={utilStyles.grid}>
         <span>
           <p>Languages</p>
