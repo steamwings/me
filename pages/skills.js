@@ -30,8 +30,8 @@ export default function CV() {
           <p>Frameworks</p>
           <ul>
             <li>Angular</li>
+            <li>Next.js (React)</li>
             <li>Rails</li>
-            <li>React</li>
             <li>Spring Boot</li>
           </ul>
           <p>Tools</p>

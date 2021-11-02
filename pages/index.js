@@ -34,13 +34,13 @@ export default function Home() {
         <div className={utilStyles.grid}>
           <a href="https://www.youtube.com/channel/UCYtpQXhep8dADXhU11xsBXA" className={styles.card}>
             <h2>&#x1f3bc; Music &rarr;</h2>
-            <p>Check out my original songs and performances.</p>
+            <p>Check out my original songs and performances</p>
           </a>
 
           <Link href="/skills" className={styles.card}>
             <a className={styles.card}>
               <h2> &#x1f4bb; Skills &rarr;</h2>
-              <p>Read about my projects and the tech I&apos;ve used</p>
+              <p>See some of the tech and tools I&apos;ve used</p>
             </a>
           </Link>
 
