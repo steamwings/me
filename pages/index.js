@@ -27,7 +27,7 @@ export default function Home() {
           <a href="https://twitter.com/zanderweather" aria-label="Twitter link"><FontAwesomeIcon size="lg" icon={faTwitter} /></a>
           <a href="https://instagram.com/zanderweather" aria-label="Instagram link"><FontAwesomeIcon size="lg" icon={faInstagram}/></a>
           <a href="https://venmo.com/u/zweather" aria-label="Venmo link"><FontAwesomeIcon size="lg" icon={faDollarSign} /></a>
-          <a href="mailto:zanderweather@outlook.com" aria-label="email link"><FontAwesomeIcon size="lg" icon={faEnvelope} /></a>
+          <a href="mailto:contact@zweather.me" aria-label="email link"><FontAwesomeIcon size="lg" icon={faEnvelope} /></a>
           <a href="https://keybase.io/zweather" aria-label="Keybase link"><FontAwesomeIcon size="lg" icon={faKeybase} /></a>
         </div>
 

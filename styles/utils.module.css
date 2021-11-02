@@ -1,10 +1,23 @@
 .grid {
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
   margin-top: 3rem;
+}
+
+.grid * {
+  margin-right: 1rem;
+}
+
+.linkBlue {
+  color: #0070f3;
+}
+
+.small {
+  font-size: medium; 
+  font-style: italic;
 }
 
 .heading2Xl {
