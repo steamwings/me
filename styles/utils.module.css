@@ -4,7 +4,8 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
-  margin-top: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem
 }
 
 .grid * {
@@ -15,9 +16,10 @@
   color: #0070f3;
 }
 
-.small {
+.note {
   font-size: medium; 
   font-style: italic;
+  max-width: 600px;
 }
 
 .heading2Xl {

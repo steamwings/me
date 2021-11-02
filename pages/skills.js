@@ -5,8 +5,10 @@ export default function CV() {
   return (
     <Layout>
       <h1>Skills</h1>
-      <p className={utilStyles.small}>This list is not exhaustive.&nbsp;
-      <a className={utilStyles.linkBlue} href="mailto:contact@zweather.me" aria-label="email link">Ask me</a>
+      <p className={utilStyles.note}>This list is not exhaustive.&nbsp;
+      <a className={utilStyles.linkBlue} 
+        href="mailto:contact@zweather.me"
+        aria-label="email link">Ask me</a>
       &nbsp;if I&apos;ve used your technology.</p>
       <div className={utilStyles.grid}>
         <span>
@@ -58,6 +60,13 @@ export default function CV() {
             <li>Jenkins</li>
           </ul>
         </span>
+      </div>
+      <div className={utilStyles.note}>
+        Check out my defunct&nbsp;
+        <a className={utilStyles.linkBlue}
+          href="https://github.com/steamwings?tab=repositories&q=gc&type=&language=&sort=" 
+          aria-label="Green Curtain project">Green Curtain</a>
+        &nbsp;project, built with NativeScript + Angular, Azure Functions, and Cosmos DB.
       </div>
     </Layout>
   )
