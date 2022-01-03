@@ -33,13 +33,13 @@ export default function Home() {
 
         <div className={utilStyles.grid}>
           <a href="https://www.youtube.com/channel/UCYtpQXhep8dADXhU11xsBXA" className={styles.card}>
-            <h2>&#x1f3bc; Music &rarr;</h2>
+            <p>&#x1f3bc; <h2>Music</h2> &rarr;</p>
             <p>Check out my original songs and performances</p>
           </a>
 
-          <Link href="/skills" className={styles.card}>
+          <Link href="/skills">
             <a className={styles.card}>
-              <h2> &#x1f4bb; Skills &rarr;</h2>
+              <p>&#x1f4bb; <h2>Skills</h2> &rarr;</p>
               <p>See some of the tech and tools I&apos;ve used</p>
             </a>
           </Link>
@@ -48,7 +48,7 @@ export default function Home() {
             href="https://github.com/steamwings/me"
             className={styles.card}
           >
-            <h2>&#x1f4dc; Source &rarr;</h2>
+            <p>&#x1f4dc; <h2>Source</h2> &rarr;</p>
             <p>
               See this site&apos;s source code, bootstrapped with Next.js
             </p>
@@ -58,7 +58,7 @@ export default function Home() {
             href="https://keybase.io/zweather"
             className={styles.card}
           >
-            <h2>&#x1f511; Keybase &rarr;</h2>
+            <p>&#x1f511; <h2>Keybase</h2> &rarr;</p>
             <p>Encrypted chat and cryptographic proofs</p>
           </a>
         </div>
