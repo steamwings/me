@@ -54,11 +54,16 @@
 .title,
 .description {
   text-align: center;
+  color: inherit;
 }
 
 .description {
   line-height: 1.5;
   font-size: 1.5rem;
+}
+
+.description a {
+  color: inherit;
 }
 
 .code {
