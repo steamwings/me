@@ -62,7 +62,7 @@ export default function CV() {
         </span>
       </div>
       <div className={utilStyles.note}>
-        Check out my defunct&nbsp;
+        Check out my (now defunct)&nbsp;
         <a className={utilStyles.linkBlue}
           href="https://github.com/steamwings?tab=repositories&q=gc&type=&language=&sort=" 
           aria-label="Green Curtain project">Green Curtain</a>
