@@ -44,6 +44,13 @@ export default function Home() {
             </a>
           </Link>
 
+          <Link href="/blog">
+            <a className={styles.card}>
+              <p>&#x1f4dd; <h2>Blog</h2> &rarr;</p>
+              <p>Read sporadic musings on disparate topics</p>
+            </a>
+          </Link>
+
           <a
             href="https://github.com/steamwings/me"
             className={styles.card}
