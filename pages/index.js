@@ -9,7 +9,7 @@ import { faEnvelope, faDollarSign } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
   return (
-    <Layout home>
+    <Layout hideBackToHome>
       <div className={styles.main}>
         <h1 className={styles.title}>
           Zander

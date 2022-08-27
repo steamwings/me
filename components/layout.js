@@ -2,11 +2,11 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Layout.module.css'
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, hideBackToHome }) {
   return (<div className={styles.container}>
     <Head>
       <title>Zander Weather</title>
-      <meta name="description" content="Zander Weather - artist, developer, Jesus-lover" />
+      <meta name="description" content="Zander Weather - artist, developer, Jesus-worshipper" />
       <link rel="icon" href="/z.ico" />
     </Head>
     <header className={styles.header}>
@@ -14,7 +14,7 @@ export default function Layout({ children, home }) {
 
     <main className={styles.main}>{children}</main>
     
-    {!home && (
+    {!hideBackToHome && (
         <div className={styles.backToHome}>
           <Link href="/">
             <a>← Back to home</a>
@@ -23,7 +23,7 @@ export default function Layout({ children, home }) {
     )}
 
     <footer className={styles.footer}>
-        &#169; 2021 Zander Weather. All Rights Reserved.
+        &#169; 2021-2022 Zander Weather. All Rights Reserved.
     </footer>
   </div>)
 }
