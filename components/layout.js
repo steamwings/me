@@ -23,7 +23,7 @@ export default function Layout({ children, hideBackToHome }) {
     )}
 
     <footer className={styles.footer}>
-        &#169; 2021-2022 Zander Weather. All Rights Reserved.
+        &#169; 2021-{new Date().getFullYear()} Zander Weather. All Rights Reserved.
     </footer>
   </div>)
 }

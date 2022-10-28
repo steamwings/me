@@ -57,6 +57,7 @@ export default function CV() {
           <ul>
             <li>Azure DevOps</li>
             <li>Concourse</li>
+            <li>GitHub Actions</li>
             <li>Jenkins</li>
           </ul>
         </span>
