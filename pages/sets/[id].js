@@ -20,13 +20,18 @@ export default function set({ title, note, readings, songs }) {
           </ul> 
         </div> 
       }
-      {
-        songs.map((song) => (<div key={song.name}>
+      { songs && songs.length > 0 &&
+        <div>
           <h3>Lyrics</h3>
-          <Song name={song.name} 
-                lyrics={song.lyrics}>
-          </Song>
-        </div>))
+          {
+            songs.map((song) => (<div key={song.name}>
+
+              <Song name={song.name} 
+                    lyrics={song.lyrics}>
+              </Song>
+            </div>))
+          }
+        </div>
       }
     </Layout>
   )
