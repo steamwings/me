@@ -2,7 +2,11 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Layout.module.css'
 
-export default function Layout({ children, hideBackToHome }) {
+export default function Layout({ children, hideBackToHome, fullWidth }) {
+  let mainStyles = {flexGrow: 1}
+  if (fullWidth) {
+    mainStyles['width'] = '100%'
+  }
   return (<div className={styles.container}>
     <Head>
       <title>Zander Weather</title>
@@ -12,7 +16,7 @@ export default function Layout({ children, hideBackToHome }) {
     <header className={styles.header}>
     </header>
 
-    <main className={styles.main}>{children}</main>
+    <main style={mainStyles}>{children}</main>
     
     {!hideBackToHome && (
         <div className={styles.backToHome}>
