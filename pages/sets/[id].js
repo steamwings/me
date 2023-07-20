@@ -75,7 +75,7 @@ export async function getStaticPaths() {
 }
 
 function dehumanize(str) {
-  return str.toLowerCase().replace(/\s/g, '_').replace(/[^\w]/g, '')
+  return str.toLowerCase().replace(/\s/g, '_').replace(/[^\w]/g, '');
 }
 
 function toLongDate(id) {

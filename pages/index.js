@@ -37,11 +37,11 @@ export default function Home() {
             <p>Check out my original songs and performances</p>
           </a>
 
-          <Link href="/skills">
-            <a className={styles.card}>
-              <span>&#x1f4bb; <h2>Skills</h2> &rarr;</span>
-              <p>See some of the tech and tools I&apos;ve used</p>
-            </a>
+          <Link href="/skills" className={styles.card}>
+
+            <span>&#x1f4bb; <h2>Skills</h2> &rarr;</span>
+            <p>See some of the tech and tools I&apos;ve used</p>
+
           </Link>
 
           <a
@@ -64,5 +64,5 @@ export default function Home() {
         </div>
       </div>
     </Layout>
-  )
+  );
 }
