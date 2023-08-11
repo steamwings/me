@@ -1,8 +1,10 @@
+'use client'
+
 import Layout from '../components/layout'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import utilStyles from '../styles/utils.module.css'
-import "@fortawesome/fontawesome-svg-core/styles.css"; 
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faGithub, faKeybase, faYoutube, faInstagram,  } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faDollarSign } from '@fortawesome/free-solid-svg-icons'
