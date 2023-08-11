@@ -1,12 +1,14 @@
+'use client'
+
 import Layout from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 
 export default function CV() {
   return (
-    <Layout>
+    <Layout hideBackToHome={false}>
       <h1>Skills</h1>
       <p className={utilStyles.note}>This list is not exhaustive.&nbsp;
-      <a className={utilStyles.linkBlue} 
+      <a className={utilStyles.linkBlue}
         href="mailto:contact@zweather.me"
         aria-label="email link">Ask me</a>
       &nbsp;if I&apos;ve used your technology.</p>
@@ -65,7 +67,7 @@ export default function CV() {
       <div className={utilStyles.note}>
         Check out my (now defunct)&nbsp;
         <a className={utilStyles.linkBlue}
-          href="https://github.com/steamwings?tab=repositories&q=gc&type=&language=&sort=" 
+          href="https://github.com/steamwings?tab=repositories&q=gc&type=&language=&sort="
           aria-label="Green Curtain project">Green Curtain</a>
         &nbsp;project, built with NativeScript + Angular, Azure Functions, and Cosmos DB.
       </div>

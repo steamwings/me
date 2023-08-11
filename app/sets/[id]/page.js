@@ -1,24 +1,26 @@
 import { promises as fs } from 'fs'
 import path from 'path'
 import yaml from 'js-yaml'
-import Layout from '../../components/layout'
-import Song from '../../components/song'
-import utilStyles from '../../styles/utils.module.css'
+import Layout from '../../../components/layout'
+import Song from '../../../components/song'
+import utilStyles from '../../../styles/utils.module.css'
 
-export default function set({ title, note, readings, songs }) {
+export default async function set({ params }) {
+  const { id } = params
+  const { title, note, readings, songs } = await fetchSetDetails(id)
   return (
     <Layout hideBackToHome>
       <h1>{title}</h1>
       <p className={utilStyles.note}>{note} &nbsp;</p>
-      { readings && readings.length > 0 && 
+      { readings && readings.length > 0 &&
         <div>
           <h3>Recommended Readings</h3>
           <ul>
             {
               readings.map(r => (<li key={r}>{r}</li>))
             }
-          </ul> 
-        </div> 
+          </ul>
+        </div>
       }
       { songs && songs.length > 0 &&
         <div>
@@ -26,7 +28,7 @@ export default function set({ title, note, readings, songs }) {
           {
             songs.map((song) => (<div key={song.name}>
 
-              <Song name={song.name} 
+              <Song name={song.name}
                     lyrics={song.lyrics}>
               </Song>
             </div>))
@@ -37,8 +39,7 @@ export default function set({ title, note, readings, songs }) {
   )
 }
 
-export async function getStaticProps(context) {
-  const { id } = context['params']
+async function fetchSetDetails(id) {
   const setDir = path.join(process.cwd(), 'private', 'sets');
   const content = yaml.load(await fs.readFile(setDir + '/' + id + '.yml'));
   const { title, note, readings, songs } = content;
@@ -47,7 +48,7 @@ export async function getStaticProps(context) {
   const songObjs = await Promise.all(songs.map(async (song) => {
     const fileName = songDir + '/' + dehumanize(song) + '.txt'
     const fileContents = await fs.readFile(fileName, 'utf8')
-      .catch(error => 'Failed to retrieve song lyrics. :(');
+      .catch(_error => 'Failed to retrieve song lyrics. :(');
     return {
       name: song,
       lyrics: fileContents
@@ -55,33 +56,29 @@ export async function getStaticProps(context) {
   }))
 
   return {
-    props: { 
-      title: title || toLongDate(id), 
-      note: note || "Thanks for joining us! Gracias por venir!", 
-      readings: readings || null, 
-      songs: songObjs }
+    title: title || toLongDate(id),
+    note: note || "Thanks for joining us! Gracias por venir!",
+    readings: readings || null,
+    songs: songObjs
   }
 }
 
-export async function getStaticPaths() {
+export async function generateStaticParams() {
   const dir = path.join(process.cwd(), 'private', 'sets');
   const files = await fs.readdir(dir);
-  const result = files.map((f) => ({params: {id: f.split('.')[0]}}))
+  const result = files.map((f) => ({id: f.split('.')[0]}))
 
-  return {
-    paths: result,
-    fallback: false
-  }
+  return result
 }
 
 function dehumanize(str) {
-  return str.toLowerCase().replace(/\s/g, '_').replace(/[^\w]/g, '')
+  return str.toLowerCase().replace(/\s/g, '_').replace(/[^\w]/g, '');
 }
 
 function toLongDate(id) {
   const date = Date.UTC(id.slice(0,4), id.slice(4,6) - 1, id.slice(6,8), 5, 0, 0)
   return new Date(date)
-    .toLocaleDateString("en-US", 
+    .toLocaleDateString("en-US",
     { year: 'numeric', month: 'long', day: 'numeric' }
   )
 }
