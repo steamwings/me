@@ -39,7 +39,7 @@ export default async function set({ params }) {
   )
 }
 
-export async function fetchSetDetails(id) {
+async function fetchSetDetails(id) {
   const setDir = path.join(process.cwd(), 'private', 'sets');
   const content = yaml.load(await fs.readFile(setDir + '/' + id + '.yml'));
   const { title, note, readings, songs } = content;
