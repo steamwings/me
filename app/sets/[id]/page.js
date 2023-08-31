@@ -1,13 +1,12 @@
-import { promises as fs } from 'fs'
-import path from 'path'
-import yaml from 'js-yaml'
+
 import Layout from '../../../components/layout'
 import Song from '../../../components/song'
 import utilStyles from '../../../styles/utils.module.css'
+import { getSet, listSets } from '../../../lib/sets'
 
 export default async function set({ params }) {
   const { id } = params
-  const { title, note, readings, songs } = await fetchSetDetails(id)
+  const { title, note, readings, songs } = await getSet(id)
   return (
     <Layout hideBackToHome>
       <h1>{title}</h1>
@@ -39,46 +38,6 @@ export default async function set({ params }) {
   )
 }
 
-async function fetchSetDetails(id) {
-  const setDir = path.join(process.cwd(), 'private', 'sets');
-  const content = yaml.load(await fs.readFile(setDir + '/' + id + '.yml'));
-  const { title, note, readings, songs } = content;
-
-  const songDir = path.join(process.cwd(), 'public', 'lyrics');
-  const songObjs = await Promise.all(songs.map(async (song) => {
-    const fileName = songDir + '/' + dehumanize(song) + '.txt'
-    const fileContents = await fs.readFile(fileName, 'utf8')
-      .catch(_error => 'Failed to retrieve song lyrics. :(');
-    return {
-      name: song,
-      lyrics: fileContents
-    }
-  }))
-
-  return {
-    title: title || toLongDate(id),
-    note: note || "Thanks for joining us! Gracias por venir!",
-    readings: readings || null,
-    songs: songObjs
-  }
-}
-
 export async function generateStaticParams() {
-  const dir = path.join(process.cwd(), 'private', 'sets');
-  const files = await fs.readdir(dir);
-  const result = files.map((f) => ({id: f.split('.')[0]}))
-
-  return result
-}
-
-function dehumanize(str) {
-  return str.toLowerCase().replace(/\s/g, '_').replace(/[^\w]/g, '');
-}
-
-function toLongDate(id) {
-  const date = Date.UTC(id.slice(0,4), id.slice(4,6) - 1, id.slice(6,8), 5, 0, 0)
-  return new Date(date)
-    .toLocaleDateString("en-US",
-    { year: 'numeric', month: 'long', day: 'numeric' }
-  )
+  return listSets()
 }

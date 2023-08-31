@@ -1,5 +1,3 @@
-'use client'
-
 import Layout from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 
