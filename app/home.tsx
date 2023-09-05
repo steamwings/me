@@ -13,10 +13,11 @@ import {
   faSoundcloud
 } from '@fortawesome/free-brands-svg-icons'
 import {faEnvelope, faDollarSign} from '@fortawesome/free-solid-svg-icons'
+import { Destination } from '../lib/nav';
 
 export default function Home() {
   return (
-    <Layout hideBackToHome>
+    <Layout backNav={Destination.None} >
       <div className={
         styles.main
       }>
@@ -68,18 +69,6 @@ export default function Home() {
             <p>See some of the tech and tools I&apos;ve used</p>
           </Link>
 
-          <Link href="https://github.com/steamwings/me"
-            className={
-              styles.card
-          }>
-            <span>
-              <h2>Source</h2>&nbsp;&#x1f4dc;
-            </span>
-            <p>
-              See this site&apos;s source code, bootstrapped with Next.js
-            </p>
-          </Link>
-
           <Link href="/poems"
             className={
               styles.card
@@ -98,6 +87,18 @@ export default function Home() {
               <h2>Music</h2>&nbsp;&#x1f3bc;
             </span>
             <p>Check out my (old) original songs and performances</p>
+          </Link>
+
+          <Link href="https://github.com/steamwings/me"
+            className={
+              styles.card
+          }>
+            <span>
+              <h2>Source</h2>&nbsp;&#x1f4dc;
+            </span>
+            <p>
+              See this site&apos;s source code, bootstrapped with Next.js
+            </p>
           </Link>
         </div>
       </div>

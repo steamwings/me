@@ -1,8 +1,12 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Layout.module.css'
+import { Destination, getUrl } from '../lib/nav';
 
-export default function Layout({ children, hideBackToHome }) {
+type LayoutProps = { children: React.ReactNode, backNav?: Destination }
+
+export default function Layout({ children, backNav }: LayoutProps) {
+  backNav = backNav ?? Destination.Up;
   return (
     <div className={styles.container}>
       <Head>
@@ -14,11 +18,11 @@ export default function Layout({ children, hideBackToHome }) {
       </header>
 
       <main className={styles.main}>{children}</main>
-      
-      {!hideBackToHome && (
+
+      {(backNav != Destination.None) && (
           <div className={styles.backToHome}>
-            <Link href="/">
-              ← Back to home
+            <Link href={getUrl(backNav)}>
+              ← Back
             </Link>
           </div>
       )}

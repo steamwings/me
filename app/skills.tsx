@@ -3,7 +3,7 @@ import utilStyles from '../styles/utils.module.css'
 
 export default function CV() {
   return (
-    <Layout hideBackToHome={false}>
+    <Layout>
       <h1>Skills</h1>
       <p className={utilStyles.note}>This list is not exhaustive.&nbsp;
       <a className={utilStyles.linkBlue}
