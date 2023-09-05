@@ -5,7 +5,7 @@ export default async function Page({ params }) {
   const { title } = params
   const { content } = await getPoem(title);
   return (
-    <Layout hideBackToHome={false}>
+    <Layout>
       <h1>{title.replaceAll('_',' ')}</h1>
       <p style={{ whiteSpace: 'pre-wrap' }}>{content}</p>
     </Layout>

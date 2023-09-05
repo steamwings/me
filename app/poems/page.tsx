@@ -5,7 +5,7 @@ import { humanize } from '../../lib/format';
 export default async function Page({ params }) {
   const poems = await listPoems();
   return (
-    <Layout hideBackToHome={false}>
+    <Layout>
       <h1>A few poems</h1>
       <ul>
         {poems.map(({title}) => (

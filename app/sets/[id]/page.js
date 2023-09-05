@@ -2,13 +2,14 @@
 import Layout from '../../../components/layout'
 import Song from '../../../components/song'
 import utilStyles from '../../../styles/utils.module.css'
+import { Destination } from '../../../lib/nav';
 import { getSet, listSets } from '../../../lib/sets'
 
 export default async function set({ params }) {
   const { id } = params
   const { title, note, readings, songs } = await getSet(id)
   return (
-    <Layout hideBackToHome>
+    <Layout backNav={Destination.None}>
       <h1>{title}</h1>
       <p className={utilStyles.note}>{note} &nbsp;</p>
       { readings && readings.length > 0 &&
