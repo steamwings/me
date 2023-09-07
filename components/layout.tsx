@@ -29,6 +29,8 @@ export default function Layout({ children, backNav }: LayoutProps) {
 
       <footer className={styles.footer}>
           &#169; 2021-{new Date().getFullYear()} Zander Weather. All Rights Reserved.
+          &nbsp;|&nbsp; See this site&#39;s
+          <a href="https://github.com/steamwings/me">&nbsp;source code</a>.
       </footer>
     </div>
   );

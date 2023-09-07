@@ -2,6 +2,13 @@ export function dehumanize(str: string) {
   return str.toLowerCase().replace(/\s/g, '_').replace(/[^\w]/g, '');
 }
 
+export function escapeHtml(str: string) {
+  return str.replace(
+    /[\u0000-\u002F\u003A-\u0040\u005B-\u0060\u007B-\u00FF]/g,
+    c => '&#' + ('000' + c.charCodeAt(0)).slice(-4) + ';'
+  )
+}
+
 export function humanize(str: string) {
   return str.replaceAll('_',' ');
 }

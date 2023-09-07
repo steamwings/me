@@ -66,17 +66,7 @@ export default function Home() {
             <span>
               <h2>Skills</h2>&nbsp;&#x1f4bb;
             </span>
-            <p>See some of the tech and tools I&apos;ve used</p>
-          </Link>
-
-          <Link href="/poems"
-            className={
-              styles.card
-          }>
-            <span>
-              <h2>Poems</h2>&nbsp;&#x1f33b;
-            </span>
-            <p>Read a smattering of my poetry</p>
+            <p>An outdated list of tech and tools I&apos;ve used</p>
           </Link>
 
           <Link href="https://www.youtube.com/channel/UCYtpQXhep8dADXhU11xsBXA"
@@ -86,20 +76,31 @@ export default function Home() {
             <span>
               <h2>Music</h2>&nbsp;&#x1f3bc;
             </span>
-            <p>Check out my (old) original songs and performances</p>
+            <p>Original songs I&apos;ll one day make more of</p>
           </Link>
 
-          <Link href="https://github.com/steamwings/me"
+          <Link href="/blog"
             className={
               styles.card
           }>
             <span>
-              <h2>Source</h2>&nbsp;&#x1f4dc;
+              <h2>Blog</h2>&nbsp;&#x1f4e2;
             </span>
             <p>
-              See this site&apos;s source code, bootstrapped with Next.js
+              Things I thought I ought to share
             </p>
           </Link>
+
+          <Link href="/poems"
+            className={
+              styles.card
+          }>
+            <span>
+              <h2>Poems</h2>&nbsp;&#x1f33b;
+            </span>
+            <p>A smattering of my poetry</p>
+          </Link>
+
         </div>
       </div>
     </Layout>
