@@ -18,8 +18,8 @@ export function toLongDate(id: string) {
   return toLocaleDate(new Date(date))
 }
 
-export function toLocaleDate(date: Date) {
-  return date.toLocaleDateString("en-US",
-    { year: 'numeric', month: 'long', day: 'numeric' }
+export function toLocaleDate(date: Date, timeZone: string = 'UTC') {
+  return date.toLocaleDateString(undefined,
+    { year: 'numeric', month: 'long', day: 'numeric', timeZone }
   )
 }
