@@ -1,7 +1,7 @@
-import Layout from '../components/layout'
+import Layout from 'components/layout'
 import Link from 'next/link'
-import styles from '../styles/home.module.css'
-import utilStyles from '../styles/utils.module.css'
+import styles from 'styles/home.module.css'
+import utilStyles from 'styles/utils.module.css'
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {
@@ -13,7 +13,7 @@ import {
   faSoundcloud
 } from '@fortawesome/free-brands-svg-icons'
 import {faEnvelope, faDollarSign} from '@fortawesome/free-solid-svg-icons'
-import { Destination } from '../lib/nav';
+import { Destination } from 'lib/nav';
 
 export default function Home() {
   return (

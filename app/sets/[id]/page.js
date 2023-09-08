@@ -1,9 +1,9 @@
 
-import Layout from '../../../components/layout'
-import Song from '../../../components/song'
-import utilStyles from '../../../styles/utils.module.css'
-import { Destination } from '../../../lib/nav';
-import { getSet, listSets } from '../../../lib/sets'
+import Layout from 'components/layout'
+import Song from 'components/song'
+import utilStyles from 'styles/utils.module.css'
+import { Destination } from 'lib/nav';
+import { getSet, listSets } from 'lib/sets'
 
 export default async function set({ params }) {
   const { id } = params

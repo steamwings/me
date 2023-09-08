@@ -1,6 +1,6 @@
 import ReactMarkdown from 'react-markdown'
-import { toLocaleDate } from '../lib/format'
-import utilStyles from '../styles/utils.module.css'
+import { toLocaleDate } from 'lib/format'
+import utilStyles from 'styles/utils.module.css'
 
 export default function Post({post}: {post: Post}) {
   return (

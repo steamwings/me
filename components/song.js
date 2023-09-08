@@ -1,5 +1,5 @@
-//import styles from '../styles/Layout.module.css' // TODO
-import utilStyles from '../styles/utils.module.css'
+//import styles from 'styles/Layout.module.css' // TODO
+import utilStyles from 'styles/utils.module.css'
 
 export default function Song({ name, lyrics }) {
 
