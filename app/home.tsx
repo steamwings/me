@@ -1,6 +1,6 @@
 import Layout from '../components/layout'
 import Link from 'next/link'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/home.module.css'
 import utilStyles from '../styles/utils.module.css'
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'

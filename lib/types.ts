@@ -1,6 +1,7 @@
-type PostMetadata = {
+type Post = {
   slug: string
   title: string
-  written: string
-  updated: string
+  written: Date
+  updated: Date
+  content: string
 }

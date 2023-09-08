@@ -1,4 +1,5 @@
 import Layout from '../../components/layout';
+import styles from '../../styles/blog.module.css'
 
 export default function BlogLayout({
   children,
@@ -6,11 +7,11 @@ export default function BlogLayout({
   children: React.ReactNode
 }) {
   return (
-    <section>
-      <Layout>
-        {/* TODO Include shared blog sidebar */}
+    <Layout>
+      {/* TODO Include shared blog sidebar */}
+      <section className={styles.root}>
         {children}
-      </Layout>
-    </section>
+      </section>
+    </Layout>
   )
 }

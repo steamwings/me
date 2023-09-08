@@ -1,19 +1,18 @@
-import { toLongDate } from '../lib/format'
+import ReactMarkdown from 'react-markdown'
+import { toLocaleDate } from '../lib/format'
 import utilStyles from '../styles/utils.module.css'
 
-export default function Post({children, metadata}: {children: any, metadata: PostMetadata}) {
+export default function Post({post}: {children: any, post: Post}) {
   return (
     <section>
-      <h1>{metadata.title}</h1>
+      <h1>{post.title}</h1>
       <p className={utilStyles.lightText}>
-        written {toLongDate(metadata.written)}
+        written {toLocaleDate(post.written)}
       </p>
       <p className={utilStyles.lightText}>
-        last updated {toLongDate(metadata.updated)}
+        last updated {toLocaleDate(post.updated)}
       </p>
-      <p className={utilStyles.preline}>
-        {children}
-      </p>
+      <ReactMarkdown>{post.content}</ReactMarkdown>
     </section>
   )
 }

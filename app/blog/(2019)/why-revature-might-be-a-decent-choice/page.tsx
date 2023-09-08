@@ -1,11 +1,9 @@
 import Post from '../../../../components/post'
-import { getPostMetadata } from '../../../../lib/posts';
+import { getPost } from '../../../../lib/posts';
 
 export default async function Revature({ params }) {
-  const metadata = await getPostMetadata(__dirname.split('/').slice(-1)[0]);
+  const post = await getPost(__dirname.split('/').slice(-1)[0]);
   return (
-    <Post metadata={metadata}>
-      Blog post stuff
-    </Post>
+    <Post post={post}/>
   );
 }

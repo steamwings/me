@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from '../styles/Layout.module.css'
+import styles from '../styles/layout.module.css'
 import { Destination, getUrl } from '../lib/nav';
 
 type LayoutProps = { children: React.ReactNode, backNav?: Destination }

@@ -7,20 +7,26 @@ export const POSTS_DIR = path.join(process.cwd(), 'app', 'blog');
 
 async function _listPosts() {
   const files = await fs.readdir(POSTS_DIR, { recursive: true })
-  const metadata = await Promise.all(files
+  const postData = await Promise.all(files
     .filter(file => file.endsWith('.yml'))
-    .map(async (file) => ({
-      slug: file.split('/').slice(-2,-1)[0], // gets directory name
-      content: await fs.readFile(path.join(path.join(POSTS_DIR, file)))
-    })));
-  return metadata.map(({slug, content}) => {
-    const metadata = <object>yaml.load(content.toString());
-    return <PostMetadata> {...metadata, slug};
+    .map(async (file) => {
+      const qualifiedDir = path.dirname(file);
+      const parentDir = path.basename(qualifiedDir);
+      file.split('/').slice(-2,-1)[0]
+      return {
+        slug: parentDir,
+        yml: await fs.readFile(path.join(POSTS_DIR, file)),
+        content: await fs.readFile(path.join(POSTS_DIR, qualifiedDir, 'page.md'))
+      }
+    }));
+  return postData.map(({slug, yml, content}) => {
+    const metadata = <object>yaml.load(yml.toString());
+    return <Post>{ content: content.toString(), ...metadata, slug };
   });
 }
 
 // TODO handle undefined case
-export async function getPostMetadata(slug: string) {
+export async function getPost(slug: string) {
   return listPosts().then(posts =>
     posts.find(post => post.slug === slug)
   );
