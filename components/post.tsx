@@ -2,7 +2,7 @@ import ReactMarkdown from 'react-markdown'
 import { toLocaleDate } from '../lib/format'
 import utilStyles from '../styles/utils.module.css'
 
-export default function Post({post}: {children: any, post: Post}) {
+export default function Post({post}: {post: Post}) {
   return (
     <section>
       <h1>{post.title}</h1>

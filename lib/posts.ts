@@ -25,11 +25,14 @@ async function _listPosts() {
   });
 }
 
-// TODO handle undefined case
 export async function getPost(slug: string) {
-  return listPosts().then(posts =>
+  const post = await listPosts().then(posts =>
     posts.find(post => post.slug === slug)
   );
+  if(post === undefined) { // thrown at SSR time
+    throw new Error(`Post with slug ${slug} not found`);
+  }
+  return post;
 }
 
 export const listPosts = cache(_listPosts);
