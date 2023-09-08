@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from '../styles/Layout.module.css'
-import { Destination, getUrl } from '../lib/nav';
+import styles from 'styles/layout.module.css'
+import { Destination, getUrl } from 'lib/nav';
 
 type LayoutProps = { children: React.ReactNode, backNav?: Destination }
 
@@ -29,6 +29,8 @@ export default function Layout({ children, backNav }: LayoutProps) {
 
       <footer className={styles.footer}>
           &#169; 2021-{new Date().getFullYear()} Zander Weather. All Rights Reserved.
+          &nbsp;|&nbsp; See this site&#39;s
+          <a href="https://github.com/steamwings/me">&nbsp;source code</a>.
       </footer>
     </div>
   );

@@ -1,6 +1,6 @@
-import Layout from '../../components/layout'
-import { listPoems } from '../../lib/poems';
-import { humanize } from '../../lib/format';
+import Layout from 'components/layout'
+import { listPoems } from 'lib/poems';
+import { humanize } from 'lib/format';
 
 export default async function Page({ params }) {
   const poems = await listPoems();

@@ -1,5 +1,5 @@
-import Layout from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
+import Layout from 'components/layout'
+import utilStyles from 'styles/utils.module.css'
 
 export default function CV() {
   return (
