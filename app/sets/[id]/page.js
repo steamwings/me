@@ -15,7 +15,7 @@ export default async function set({ params }) {
       <p className={utilStyles.note}>{note} &nbsp;</p>
       { readings && readings.length > 0 &&
         <div>
-          <h3>Recommended Readings</h3>
+          <h3>Readings</h3>
           <ul>
             {
               readings.map(r => (<li key={r}>
