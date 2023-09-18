@@ -1,6 +1,7 @@
 
 import Layout from 'components/layout'
 import Song from 'components/song'
+import ReactMarkdown from 'react-markdown'
 import utilStyles from 'styles/utils.module.css'
 import { Destination } from 'lib/nav';
 import { getSet, listSets } from 'lib/sets'
@@ -17,7 +18,9 @@ export default async function set({ params }) {
           <h3>Recommended Readings</h3>
           <ul>
             {
-              readings.map(r => (<li key={r}>{r}</li>))
+              readings.map(r => (<li key={r}>
+                <ReactMarkdown>{r}</ReactMarkdown>
+              </li>))
             }
           </ul>
         </div>
