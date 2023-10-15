@@ -9,6 +9,10 @@ export function escapeHtml(str: string) {
   )
 }
 
+export function titelize(str: string) {
+  return humanize(str).replace(/(?<!')\b\w/g, l => l.toUpperCase());
+}
+
 export function humanize(str: string) {
   return str.replaceAll('_',' ');
 }

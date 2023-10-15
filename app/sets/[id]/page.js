@@ -1,10 +1,12 @@
 
 import Layout from 'components/layout'
+import Link from 'next/link'
 import Song from 'components/song'
 import ReactMarkdown from 'react-markdown'
 import utilStyles from 'styles/utils.module.css'
+import { dehumanize } from 'lib/format'
 import { Destination } from 'lib/nav';
-import { getSet, listSets } from 'lib/sets'
+import { getSet, listSets } from 'lib/static/sets'
 
 export default async function set({ params }) {
   const { id } = params
@@ -18,6 +20,7 @@ export default async function set({ params }) {
           <h3>Readings</h3>
           <ul>
             {
+              // TODO ReactMarkdown here for links is lazy. Switch to YAML config
               readings.map(r => (<li key={r}>
                 <ReactMarkdown>{r}</ReactMarkdown>
               </li>))
@@ -30,10 +33,9 @@ export default async function set({ params }) {
           <h3>Lyrics</h3>
           {
             songs.map((song) => (<div key={song.name}>
-
-              <Song name={song.name}
-                    lyrics={song.lyrics}>
-              </Song>
+              <Link href={"/lyrics/" + dehumanize(song.name)}>
+                {song.name}
+              </Link>
             </div>))
           }
         </div>

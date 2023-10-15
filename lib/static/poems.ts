@@ -2,7 +2,7 @@ import path from 'path'
 import { promises as fs } from 'fs'
 import { cache } from 'react'
 
-export const POEM_DIR = path.join(process.cwd(), 'public', 'poems');
+export const POEM_DIR = path.join(process.cwd(), 'private', 'poems');
 
 async function _listPoems() {
   const files = await fs.readdir(POEM_DIR);

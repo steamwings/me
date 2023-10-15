@@ -1,16 +1,16 @@
 import Layout from 'components/layout'
-import { listPoems } from 'lib/static/poems';
+import { listMyLyrics } from 'lib/static/lyrics';
 import { humanize } from 'lib/format';
 
 export default async function Page({ params }) {
-  const poems = await listPoems();
+  const lyrics = await listMyLyrics();
   return (
     <Layout>
-      <h1>A few poems</h1>
+      <h1>Some of my lyrics</h1>
       <ul>
-        {poems.map(({title}) => (
+        {lyrics.map(({title}) => (
           <li key={title}>
-            <a href={`/poems/${title}`}>{humanize(title)}</a>
+            <a href={`/lyrics/${title}`}>{humanize(title)}</a>
           </li>
         ))}
       </ul>

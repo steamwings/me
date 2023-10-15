@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs'
 import path from 'path'
 import yaml from 'js-yaml'
-import { dehumanize, toLongDate } from './format';
+import { dehumanize, toLongDate } from '../format';
 
 const SET_DIR = path.join(process.cwd(), 'private', 'sets');
 
@@ -15,7 +15,7 @@ export async function getSet(id: string) {
   // @ts-ignore TODO fix types
   const { title, note, readings, songs } = yaml.load(content);
 
-  const songDir = path.join(process.cwd(), 'public', 'lyrics');
+  const songDir = path.join(process.cwd(), 'private', 'lyrics');
   const songObjs = await Promise.all(songs.map(async (song) => {
     const fileName = songDir + '/' + dehumanize(song) + '.txt'
     const fileContents = await fs.readFile(fileName, 'utf8')
