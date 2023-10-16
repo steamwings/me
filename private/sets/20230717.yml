@@ -1,5 +1,6 @@
 readings:
-  - "[John 13](https://www.biblegateway.com/passage/?search=john+13&version=NRSVUE)"
+  - id: John 13
+    url: https://www.biblegateway.com/passage/?search=john+13&version=NRSVUE
 songs:
   - How Long?
   - For Your Glory

@@ -19,10 +19,16 @@ export default async function set({ params }) {
           <h3>Readings</h3>
           <ul>
             {
-              // TODO ReactMarkdown here for links is lazy. Switch to YAML config
-              readings.map(r => (<li key={r}>
-                <ReactMarkdown>{r}</ReactMarkdown>
-              </li>))
+              readings.map(r => {
+                if (r.url !== undefined) {
+                  return (<li key={r}>
+                    <Link href={r.url}>{r.id}</Link>
+                  </li>);
+                }
+                return (<li key={r}>
+                  {r.id}
+                </li>);
+              })
             }
           </ul>
         </div>
@@ -30,13 +36,15 @@ export default async function set({ params }) {
       { songs && songs.length > 0 &&
         <div>
           <h3>Lyrics</h3>
-          {
-            songs.map((song) => (<div key={song.name}>
-              <Link href={"/lyrics/" + dehumanize(song.name)}>
-                {song.name}
-              </Link>
-            </div>))
-          }
+          <ul>
+            {
+              songs.map((song) => (<li key={song.name}>
+                <Link href={"/lyrics/" + dehumanize(song.name)}>
+                  {song.name}
+                </Link>
+              </li>))
+            }
+          </ul>
         </div>
       }
     </Layout>

@@ -1,5 +1,6 @@
 readings:
-  - "[Galatians 3:23-4:31](https://www.biblegateway.com/passage/?search=galatians+3%3A23-4%3A31&version=NRSVUE)"
+  - id: Galatians 3:23-4:31
+    url: https://www.biblegateway.com/passage/?search=galatians+3%3A23-4%3A31&version=NRSVUE
 songs:
   - Upsidedown
   - Ever Be
