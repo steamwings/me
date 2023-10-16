@@ -1,7 +1,6 @@
 
 import Layout from 'components/layout'
 import Link from 'next/link'
-import Song from 'components/song'
 import ReactMarkdown from 'react-markdown'
 import utilStyles from 'styles/utils.module.css'
 import { dehumanize } from 'lib/format'

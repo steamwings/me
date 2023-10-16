@@ -20,7 +20,7 @@ export async function getLyric(title: string) {
   const mine = (await listLyrics()).find(lyric => lyric.title === title)?.mine || false;
   const dir = mine ? MY_LYRICS_DIR : NOT_MY_LYRICS_DIR;
   const content = await fs.readFile(path.join(dir, `${title}.txt`), 'utf-8');
-  return { title, content, mine };
+  return { content, mine };
 }
 
 export const listMyLyrics = cache(_listMyLyrics);
