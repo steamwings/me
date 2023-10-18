@@ -1,7 +1,7 @@
 title: 'August 26, 2022'
-readings: 
-  - Ephesians 2
-  - John 15
-  - Psalm 139
-songs: 
+readings:
+  - id: Ephesians 2
+  - id: John 15
+  - id: Psalm 139
+songs:
   - Gardener of my Heart

@@ -5,7 +5,6 @@ import utilStyles from 'styles/utils.module.css'
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {
-  faTwitter,
   faGithub,
   faKeybase,
   faYoutube,
