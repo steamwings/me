@@ -1,5 +1,5 @@
 import Layout from 'components/layout'
-import { listMyLyrics } from 'lib/static/lyrics';
+import { listMyLyrics } from 'lib/ssr/lyrics';
 import { humanize } from 'lib/format';
 
 export default async function Page({ params }) {

@@ -1,4 +1,4 @@
-import { listLyrics, getLyric } from 'lib/static/lyrics';
+import { listLyrics, getLyric } from 'lib/ssr/lyrics';
 import Song from 'components/song';
 
 export default async function Page({ params }) {

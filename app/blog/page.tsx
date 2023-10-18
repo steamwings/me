@@ -1,4 +1,4 @@
-import { listPosts } from 'lib/static/posts';
+import { listPosts } from 'lib/ssr/posts';
 
 export default async function Page({ params }) {
   const posts = await listPosts();

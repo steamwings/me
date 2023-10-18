@@ -1,6 +1,6 @@
 import Layout from 'components/layout';
 import utilStyles from 'styles/utils.module.css'
-import { listPoems, getPoem } from 'lib/static/poems';
+import { listPoems, getPoem } from 'lib/ssr/poems';
 
 export default async function Page({ params }) {
   const { title } = params

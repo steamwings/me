@@ -4,7 +4,7 @@ import Link from 'next/link'
 import utilStyles from 'styles/utils.module.css'
 import { dehumanize } from 'lib/format'
 import { Destination } from 'lib/nav';
-import { getSet, listSets } from 'lib/static/sets'
+import { getSet, listSets } from 'lib/ssr/sets'
 
 export default async function set({ params }) {
   const { id } = params

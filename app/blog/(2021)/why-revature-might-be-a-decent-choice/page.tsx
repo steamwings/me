@@ -1,5 +1,5 @@
 import Post from 'components/post'
-import { getPost } from 'lib/static/posts';
+import { getPost } from 'lib/ssr/posts';
 
 export default async function Revature({ params }) {
   const post = await getPost(__dirname.split('/').slice(-1)[0]);
