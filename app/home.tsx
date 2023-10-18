@@ -101,6 +101,16 @@ export default function Home() {
             <p>A smattering of my poetry</p>
           </Link>
 
+          <Link href="/sets"
+            className={
+              styles.card
+          }>
+            <span>
+              <h2>Sets</h2>&nbsp;&#x1f4d6;
+            </span>
+            <p>Lyrics and readings for worship nights</p>
+          </Link>
+
         </div>
       </div>
     </Layout>
