@@ -24,7 +24,7 @@ I took a lot of software courses in college, but there were so many concepts to 
 
 For my cohort, Revature would pay for two certifications a year (albeit from a list of your instructor's choosing). Pick the ones that align with your goals. I didn't end up using this benefit, since I didn't feel like this was the best use of my time.
 
-## The ladder's as tall as you climb
+### The ladder's as tall as you climb
 
 The most valuable benefit for me (which encompasses both the first and second reasons above) was the time. If you're motivated, you can learn and accomplish a lot in 10-12 weeks. If you're clever and fairly lucky, you can align your future plans with the content of your Revature training. Then, by the time you leave training, you just got paid to develop the technical skills you needed to build the kind software you want to build. If you're really motivated, and have a lot of content overlap, you may even have time to develop some software during training.
 
