@@ -42,7 +42,7 @@ Spruce it up: avocado, green onions, black olives, [crema](#lime-crema-topping).
 - Can of corn (drained)
 - Can of black beans (drained)
 - 1 cup cooked rice
-- 2 roasted zucchini or bell peppers
+- 2 roasted zucchini or bell peppers, seasoned with cumin, chili powder, etc.
 - Half onion (chopped, quick-pickled with 15min in vinegar)
 - Burrito-size tortillas
 - Toppings: salsa, avocado, cheese, sour cream, [crema](#lime-crema-topping) etc.
@@ -68,6 +68,16 @@ Spruce it up: avocado, green onions, black olives, [crema](#lime-crema-topping).
 - Carrots, onion, celery, garlic (powder)
 
 Chop veggies and sautee onion and garlic until fragrant. Add in the meat and broth to cover it. [Stew](#ballpark-stewing-times) until tender. Put leftovers in the freezer.
+
+### A Sandwich Plan
+
+- Vessel: bread, tortilla, pita, etc.
+- Spread: mayo, mustard, pesto, etc.
+- Protein: deli meat, hummus, tuna salad, egg salad, etc.
+- Veggies: lettuce, tomato, banana peppers, cucumber, pickles, etc.
+- Extras: cheese, avocado, bacon, etc.
+
+> Spending more on high quality bread or meat is always worth it if it means you aren't going out for lunch.
 
 ### Tuna Salad
 
