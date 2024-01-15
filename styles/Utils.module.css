@@ -20,6 +20,7 @@
   font-size: medium;
   font-style: italic;
   max-width: 600px;
+  white-space: pre-wrap;
 }
 
 .heading2Xl {

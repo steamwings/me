@@ -14,7 +14,7 @@ export default async function set({ params }) {
       <h1>{title}</h1>
       <p className={utilStyles.note}>{note} &nbsp;</p>
       { readings && readings.length > 0 &&
-        <div>
+        <div className={utilStyles.preline}>
           <h3>Readings</h3>
           <ul>
             {
