@@ -1,6 +1,6 @@
 .grid {
   display: flex;
-  align-items: top;
+  align-items: baseline;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
@@ -10,10 +10,6 @@
 
 .grid * {
   margin-right: 1rem;
-}
-
-.linkBlue {
-  color: #0070f3;
 }
 
 .note {

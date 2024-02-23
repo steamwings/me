@@ -14,11 +14,9 @@ export default function Layout({ children, backNav }: LayoutProps) {
       <main className={styles.main}>{children}</main>
 
       {(backNav != Destination.None) && (
-          <div className={styles.backToHome}>
-            <Link href={getUrl(backNav)}>
-              ← Back
-            </Link>
-          </div>
+        <Link href={getUrl(backNav)} className={styles.backToHome}>
+          ← Back
+        </Link>
       )}
 
       <footer className={styles.footer}>

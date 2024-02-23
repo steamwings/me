@@ -29,14 +29,10 @@
 }
 
 .social a {
-  color: #0070f3;
+  color: rgb(255, 208, 80) /*#0070f3*/;
   text-decoration: none;
   margin: 10px;
   max-height: 42px;
-}
-
-.fa {
-  size: "lg";
 }
 
 .title a:hover,
@@ -81,9 +77,9 @@
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #eaeaea;
+  border: 1px solid rgb(106, 98, 87);
   border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.25s ease, border-color 0.25s ease;
   width: 45%;
   min-width: 18rem;
 }
@@ -91,8 +87,9 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  text-decoration: none;
+  color: rgb(255, 208, 80);
+  border-color: rgb(255, 208, 80);
 }
 
 .card h2 {
