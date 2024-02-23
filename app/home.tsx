@@ -56,30 +56,24 @@ export default function Home() {
         <div className={
           utilStyles.grid
         }>
-          <Link href="/skills"
-            className={
-              styles.card
-          }>
-            <span>
-              <h2>Skills</h2>&nbsp;&#x1f4bb;
-            </span>
-            <p>An outdated list of tech and tools I&apos;ve used</p>
-          </Link>
-
           <Link href="https://www.youtube.com/channel/UCYtpQXhep8dADXhU11xsBXA"
-            className={
-              styles.card
-          }>
+            className={styles.card}>
             <span>
               <h2>Music</h2>&nbsp;&#x1f3bc;
             </span>
             <p>Original songs I&apos;ll one day make more of</p>
           </Link>
 
+          <Link href="/skills"
+            className={styles.card}>
+            <span>
+              <h2>Skills</h2>&nbsp;&#x1f4bb;
+            </span>
+            <p>An outdated list of tech and tools I&apos;ve used</p>
+          </Link>
+
           <Link href="/blog"
-            className={
-              styles.card
-          }>
+            className={styles.card}>
             <span>
               <h2>Blog</h2>&nbsp;&#x1f4e2;
             </span>
@@ -89,19 +83,15 @@ export default function Home() {
           </Link>
 
           <Link href="/poems"
-            className={
-              styles.card
-          }>
+            className={styles.card}>
             <span>
               <h2>Poems</h2>&nbsp;&#x1f33b;
             </span>
-            <p>A smattering of my poetry</p>
+            <p>A small smattering of poor poetry</p>
           </Link>
 
           <Link href="/sets"
-            className={
-              styles.card
-          }>
+            className={styles.card}>
             <span>
               <h2>Sets</h2>&nbsp;&#x1f4d6;
             </span>
