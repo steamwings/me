@@ -7,7 +7,7 @@ body {
   line-height: 1.6;
   font-size: 18px;
   color-scheme: dark;
-  background-color: rgb(15, 17, 17);/* #131516; */
+  background-color: rgb(18, 14, 25);/* #131516; */
   color: rgb(232, 230, 227);
 }
 
@@ -17,7 +17,7 @@ body {
 
 a {
   text-decoration: none;
-  color: rgb(51, 145, 255);
+  color: rgb(85, 150, 255);
 }
 
 h1,h2,h3 > a {
