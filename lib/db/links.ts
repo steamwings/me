@@ -11,9 +11,14 @@ export function getLink(filter: object) {
 }
 
 export function getLinks(pathRegex: string | null = null) {
-  const filter = pathRegex == null ? {} : { "path": { "$regex": pathRegex} };
-  return getMongoClient().db('me').collection('links')
-    .find(filter).toArray();
+  try {
+    const filter = pathRegex == null ? {} : { "path": { "$regex": pathRegex} };
+    return getMongoClient().db('me').collection('links')
+      .find(filter).toArray();
+  } catch (e) {
+    console.error(e);
+    return [];
+  }
 }
 
 export function addLink(path: string, destination: string) {
