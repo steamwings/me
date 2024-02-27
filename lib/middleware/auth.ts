@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function authMiddleware(request: NextRequest) {
   const requestToken = request.headers.get('Authorization')?.split(' ')[1]
-  if (requestToken === undefined) {
+  if (requestToken == undefined) {
     return NextResponse.json({error: 'No token provided.'}, {status: 401});
   }
   else if (!(await validToken(requestToken))) {
@@ -25,7 +25,7 @@ async function validToken(requestToken: string) {
 async function generateToken(timestamp: number) {
   const key = process.env.API_KEY
   if (key === undefined) {
-    throw 'API Key not defined'
+    throw new Error('API_KEY not defined')
   }
   const data = key + timestamp.toString()
   const hash = await crypto.subtle.digest('SHA-512', new TextEncoder().encode(data))

@@ -1,5 +1,8 @@
-import {NextResponse} from "next/server";
+import { getLinks } from "lib/db/links";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(_req : Request) {
-  return NextResponse.json({links: [{name: "first"}]})
+export async function GET(req: NextRequest) {
+  const params = req.nextUrl.searchParams;
+  const data = await getLinks(params.get('path'));
+  return NextResponse.json(data);
 }
