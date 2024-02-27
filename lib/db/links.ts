@@ -38,9 +38,9 @@ export function updateLink(path: string, update: object) {
 }
 
 function getMongoClient() {
-  const dbUri = process.env.DB_URI;
+  const dbUri = process.env.MONGODB_URI;
   if (dbUri == undefined) {
-    throw new Error("DB_URI not defined");
+    throw new Error("MONGODB_URI not defined");
   }
   return new MongoClient(dbUri);
 }
