@@ -1,9 +1,10 @@
+import { NextRequest } from "next/server";
 import { redirect } from "../link";
 
 export async function GET(
-  _req : Request,
+  req : NextRequest,
   { params }: { params: { link: string, link2: string } })
 {
   const path = params.link + '/' + params.link2
-  return redirect(path);
+  return redirect(req, path);
 }

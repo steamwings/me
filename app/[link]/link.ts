@@ -1,11 +1,13 @@
 import { resolveLink } from "lib/db/links";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function redirect(path: string) {
+export async function redirect(req: NextRequest, path: string) {
   const linkRecord = await resolveLink(path);
 
   if (linkRecord == null) {
-    return NextResponse.redirect('/404');
+    const url = req.nextUrl.clone()
+    url.pathname = '/404'
+    return NextResponse.redirect(url);
   }
 
   return NextResponse.redirect(linkRecord.destination);
