@@ -6,10 +6,10 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {
   faGithub,
-  faKeybase,
-  faYoutube,
   faInstagram,
-  faSoundcloud
+  faSignalMessenger,
+  faSoundcloud,
+  faYoutube,
 } from '@fortawesome/free-brands-svg-icons'
 import {faEnvelope, faDollarSign} from '@fortawesome/free-solid-svg-icons'
 import { Destination } from 'lib/nav';
@@ -49,8 +49,8 @@ export default function Home() {
               icon={faDollarSign}/></a>
           <a href="mailto:contact@zweather.me" aria-label="email link"><FontAwesomeIcon size="lg"
               icon={faEnvelope}/></a>
-          <a href="https://keybase.io/zweather" aria-label="Keybase link"><FontAwesomeIcon size="lg"
-              icon={faKeybase}/></a>
+          <a href="https://signal.me/#eu/JMbjrhGqx/NJWDIGLJlFhYRMlkjJDfFwlIrsAEHEgMuW8hEs7o1JrLh7AsFfncFR" aria-label="Signal link">
+            <FontAwesomeIcon size="lg" icon={faSignalMessenger}/></a>
         </div>
 
         <div className={
