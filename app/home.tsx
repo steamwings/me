@@ -7,6 +7,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {
   faGithub,
   faInstagram,
+  faMastodon,
   faSignalMessenger,
   faSoundcloud,
   faYoutube,
@@ -39,18 +40,14 @@ export default function Home() {
         }>
           <a href="https://github.com/steamwings" aria-label="Github link"><FontAwesomeIcon size="lg"
               icon={faGithub}/></a>
-          <a href="https://soundcloud.com/speedthecoming" aria-label="Soundcloud link"><FontAwesomeIcon size="lg"
-              icon={faSoundcloud}/></a>
-          <a href="https://www.youtube.com/channel/UCYtpQXhep8dADXhU11xsBXA" aria-label="Youtube link"><FontAwesomeIcon size="lg"
-              icon={faYoutube}/></a>
-          <a href="https://instagram.com/zanderweather" aria-label="Instagram link"><FontAwesomeIcon size="lg"
-              icon={faInstagram}/></a>
-          <a href="https://venmo.com/u/zweather" aria-label="Venmo link"><FontAwesomeIcon size="lg"
-              icon={faDollarSign}/></a>
-          <a href="mailto:contact@zweather.me" aria-label="email link"><FontAwesomeIcon size="lg"
-              icon={faEnvelope}/></a>
           <a href="https://signal.me/#eu/JMbjrhGqx/NJWDIGLJlFhYRMlkjJDfFwlIrsAEHEgMuW8hEs7o1JrLh7AsFfncFR" aria-label="Signal link">
             <FontAwesomeIcon size="lg" icon={faSignalMessenger}/></a>
+          <a rel="me" href="https://weather.family/@zander" aria-label="Mastodon link"><FontAwesomeIcon size="lg"
+            icon={faMastodon}/></a>
+          <a href="mailto:contact@zweather.me" aria-label="email link"><FontAwesomeIcon size="lg"
+              icon={faEnvelope}/></a>
+          <a href="https://venmo.com/u/zweather" aria-label="Venmo link"><FontAwesomeIcon size="lg"
+              icon={faDollarSign}/></a>
         </div>
 
         <div className={
