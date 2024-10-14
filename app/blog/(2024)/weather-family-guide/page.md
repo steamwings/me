@@ -5,11 +5,11 @@
 - weather.family is a place to stay up to date with family and friends.
 - Your account is configured for privacy **by default**. Your posts will only appear to your followers who also have accounts on weather.family unless you explicitly change settings.
 - No ads, no tracking, no content algorithms, no one selling your data, no AIs training on your photos, etc.
-- To get started, ask for an invite link!
+- That's the gist. Now just ask for an invite link!
 
 ## Why was this created?
 
-We needed a more private place to share content, but we still want to keep in touch!
+Mainly, we wanted a private place to share content that's a little more flexible than a group chat. As a bonus, you can optionally follow others across Mastodon.
 
 ## What is Mastodon?
 
