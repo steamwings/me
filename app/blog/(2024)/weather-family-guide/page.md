@@ -4,8 +4,16 @@
 
 - 🐘 weather.family uses Mastodon, a social media platform for posting updates and photos among family and family friends.
 - 🚫 No ads, no tracking, no content algorithms, no one selling your data, no AIs training on your photos, etc.
-- 🔒 Your account is configured for privacy **by default**. Your posts will only appear to your followers who also have accounts on weather.family unless you explicitly change settings.
+- 🔒 By default, your posts will only appear to others who also have accounts on weather.family (unless you change settings).
 - 📫 That's the gist. Now you just need an invite link!
+
+## What apps can I use on my phone?
+
+An official Mastodon app is available for iOS and Android. Some third-party app options:
+On iOS: Tusker, Ice Cubes, Ivory
+On Android: Moshidon (which I use), Tusky
+
+Worst case, you can try the website on your phone's browser.
 
 ## Why was this created?
 
@@ -23,19 +31,39 @@ Decentralized means that no single company or entity controls or owns everything
 
 A server is loosely defined as a place where code runs. Every website comes from a server. It takes money to operate servers and time to keep them up to date with important security patches.
 
-## Understanding post visibility
+## About reply visibility
 
-> Hey, there! 👋 We have quite a few post visibility options on weather.family. We've set your settings to be most private by default, so leaving things as is should be safest.
+First, let's discuss reply visibility. Replies default to the visibility of the post they're replying to, though you can restrict the reply visibility manually.
+
+That means if you reply to a public, federated (non-local-only) post (which means most posts from other Mastodon servers), your reply will be public and federated by default. You may want to change your reply's visibility before posting.
+
+> ❗ You can add :local_only: (including the colons) to any post or reply to make sure it is local-only, even from apps which don't display local-only as an option.  ([ref](https://github.com/hometown-fork/hometown/wiki/Local-only-posting#the-local_only-emoji))
+
+## About post visibility
+
+On the website, you'll see a broken chain icon at the bottom of a post if it's local-only. This post is Public but Local-only, so it's only public to users of weather.family.
+
+![Screen clip with public post and broken chain icon](/local-only-toot.png)
+
+You may not see local-only options in some Mastodon apps, but new posts on weather.family will still use the default setting.
 
 Currently, there are two sets of options for post visibility. The first is under the lock icon. These are standard [Mastodon options](https://docs.joinmastodon.org/user/posting/#privacy).
 
 ![Screen clipping with "Public", "Unlisted", "Followers only", "Mentioned people only"](/followers-only.png)
 
-The second set of options is under the chain link icon. These come from a flavor of Mastodon we use called Hometown. **In short, Local-only posts are _not_ federated**--meaning they won't be distributed to other servers. More [here](https://github.com/hometown-fork/hometown/wiki/Local-only-posting).
+The default is currently "Public". You may prefer "Followers only" and you can make that your default in your account settings. "Mentioned people only" functions as Mastodon's equivalent of direct messages (DMs).
+
+The second set of options is under the chain link icon. These come from a flavor of Mastodon we use called Hometown. **In short, Local-only posts are _not_ federated**--meaning they won't be shared to other servers. More [here](https://github.com/hometown-fork/hometown/wiki/Local-only-posting).
 
 ![Screen clipping with "Federated" and "Local-only" post options.](/local-only.png)
 
-The use of "Followers only" and "Local-only" together is intended to  ensure that to see a post, someone must (1) be your follower and (2) be logged into a weather.family account. The combination of "Public" and "Local-only" may still be visible to people who are not logged in to weather.family.
+The use of "Public" and "Local-only" together restricts the post to users logged into a weather.family account.
+
+> ❗ You can add :local_only: (including the colons) to any post or reply to make sure it is local-only, even from apps which don't display local-only as an option. ([ref](https://github.com/hometown-fork/hometown/wiki/Local-only-posting#the-local_only-emoji))
+
+## How can I be sure my posts are local-only from a standard Mastodon app?
+
+The screenshots above show how the website displays posts, but most Mastodon apps won't show the local-only option or which posts are local-only.
 
 ## What is the Fediverse?
 
