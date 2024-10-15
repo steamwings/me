@@ -1,15 +1,15 @@
-[weather.family](https://weather.family) is a privacy-minded social network run and customized by Zander, created mainly as a place to post updates and photos among family and friends.
+[weather.family](https://weather.family) is a privacy-minded social network server run and customized by Zander.
 
 ## Highlights
 
-- weather.family uses Mastodon, a social media platform that puts users in control.
-- No ads, no tracking, no content algorithms, no one selling your data, no AIs training on your photos, etc.
-- Your account is configured for privacy **by default**. Your posts will only appear to your followers who also have accounts on weather.family unless you explicitly change settings.
-- That's the gist. Now you just need an invite link!
+- 🐘 weather.family uses Mastodon, a social media platform for posting updates and photos among family and family friends.
+- 🚫 No ads, no tracking, no content algorithms, no one selling your data, no AIs training on your photos, etc.
+- 🔒 Your account is configured for privacy **by default**. Your posts will only appear to your followers who also have accounts on weather.family unless you explicitly change settings.
+- 📫 That's the gist. Now you just need an invite link!
 
 ## Why was this created?
 
-Mainly, we wanted a private place to share content that's a little more flexible than a group chat. As a bonus, you can optionally follow others across Mastodon.
+Mainly, we wanted a private place to share content that's a little more flexible than a group chat. As a bonus, you can optionally follow others across Mastodon (and the Fediverse).
 
 ## What is Mastodon?
 
@@ -25,7 +25,7 @@ A server is loosely defined as a place where code runs. Every website comes from
 
 ## Understanding post visibility
 
-There are quite a few post visibility options on weather.family. If you're confused, just use the defaults. If you're curious, read on.
+> Hey, there! 👋 We have quite a few post visibility options on weather.family. We've set your settings to be most private by default, so leaving things as is should be safest.
 
 Currently, there are two sets of options for post visibility. The first is under the lock icon. These are standard [Mastodon options](https://docs.joinmastodon.org/user/posting/#privacy).
 
