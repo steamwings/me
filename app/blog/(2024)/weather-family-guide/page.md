@@ -2,14 +2,15 @@
 
 ### Highlights
 
-- 🐘 weather.family uses Mastodon, a social media platform for posting updates and photos among family and family friends.
+- 💬 weather.family is an invite-only site for posting updates and photos among family and family friends.
+- 🐘 weather.family uses Mastodon, a social media platform.
 - 🚫 No ads, no tracking, no content algorithms, no one selling your data, no AIs training on your photos, etc.
 - 🔒 By default, your posts will only appear to others who also have accounts on weather.family (unless you change settings).
 - 📫 That's the gist. Now you just need an invite link!
 
 ### What apps can I use on my phone?
 
-There are many apps you can use with weather.family and Mastodon. Here are a few.
+You can use any Mastodon app with weather.family. Here are a few.
 
 iOS:
 - Mastodon (official app)
