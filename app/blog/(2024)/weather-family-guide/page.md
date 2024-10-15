@@ -9,11 +9,22 @@
 
 ## What apps can I use on my phone?
 
-An official Mastodon app is available for iOS and Android. Some third-party app options:
-On iOS: Tusker, Ice Cubes, Ivory
-On Android: Moshidon (which I use), Tusky
+There are many apps you can use with weather.family and Mastodon. Here are a few.
 
-Worst case, you can try the website on your phone's browser.
+iOS:
+- Mastodon (official app)
+- Tusker
+- Ice Cubes
+- Ivory
+
+Android:
+- Mastodon (official app)
+- Moshidon (which I use)
+- Tusky
+
+Worst case, there's always the website on your phone's browser.
+
+> In most apps, posts you create will appear as "Public" by default. Don't worry--unless you explicitly change settings, "Public" is only _public_ among users of weather.family. See the section on post visibility below.
 
 ## Why was this created?
 
@@ -21,11 +32,7 @@ We wanted a private place to share content that's more flexible than a group cha
 
 ## What is Mastodon?
 
-Mastodon is a free, [open-source](https://opensource.com/resources/what-open-source), decentralized social media platform. Similar to how email works, anyone can run a server and connect to the larger network.
-
-## What does decentralized mean?
-
-Decentralized means that no single company or entity controls or owns everything. Instead, many servers run by different people all communicate with each other.
+Mastodon is a free, [open-source](https://opensource.com/resources/what-open-source) social media platform that's owned by no one. Similar to how email works, Mastodon is _decentralized_: anyone can run a server and connect to the larger network.
 
 ## What is a server?
 
@@ -67,7 +74,11 @@ The screenshots above show how the website displays posts, but most Mastodon app
 
 ## What is the Fediverse?
 
-Mastodon can integrate with other apps like [PixelFed](https://pixelfed.org/) (think decentralized Instagram), [PeerTube](https://joinpeertube.org/) (think decentralized YouTube), and many other apps. Broadly, this network is called the [Fediverse](https://en.wikipedia.org/wiki/Fediverse).
+Imagine if you could comment on a YouTube video from your Instagram account, or tweet a comment on a Facebook account.
+
+Well, that's never going to happen, but the Fediverse is kind of like that.
+
+Mastodon can play nicely with other apps like [PixelFed](https://pixelfed.org/) (think decentralized Instagram), [PeerTube](https://joinpeertube.org/) (think decentralized YouTube), and many other apps. Broadly, this network is called the [Fediverse](https://en.wikipedia.org/wiki/Fediverse).
 
 ## HALP. I have so many more questions!
 
