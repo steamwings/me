@@ -1,11 +1,11 @@
-[weather.family](https://weather.family) is a Mastodon server run by Zander, created mainly as a place to post updates and photos among family and friends.
+[weather.family](https://weather.family) is a privacy-minded social network run and customized by Zander, created mainly as a place to post updates and photos among family and friends.
 
 ## Highlights
 
-- weather.family is a place to stay up to date with family and friends.
-- Your account is configured for privacy **by default**. Your posts will only appear to your followers who also have accounts on weather.family unless you explicitly change settings.
+- weather.family uses Mastodon, a social media platform that puts users in control.
 - No ads, no tracking, no content algorithms, no one selling your data, no AIs training on your photos, etc.
-- That's the gist. Now just ask for an invite link!
+- Your account is configured for privacy **by default**. Your posts will only appear to your followers who also have accounts on weather.family unless you explicitly change settings.
+- That's the gist. Now you just need an invite link!
 
 ## Why was this created?
 
