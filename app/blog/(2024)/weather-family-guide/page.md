@@ -17,7 +17,7 @@ Worst case, you can try the website on your phone's browser.
 
 ## Why was this created?
 
-Mainly, we wanted a private place to share content that's a little more flexible than a group chat. As a bonus, you can optionally follow others across Mastodon (and the Fediverse).
+We wanted a private place to share content that's more flexible than a group chat. As a bonus, you can optionally follow others across Mastodon (and the Fediverse).
 
 ## What is Mastodon?
 
@@ -68,6 +68,10 @@ The screenshots above show how the website displays posts, but most Mastodon app
 ## What is the Fediverse?
 
 Mastodon can integrate with other apps like [PixelFed](https://pixelfed.org/) (think decentralized Instagram), [PeerTube](https://joinpeertube.org/) (think decentralized YouTube), and many other apps. Broadly, this network is called the [Fediverse](https://en.wikipedia.org/wiki/Fediverse).
+
+## HALP. I have so many more questions!
+
+Well, you can try [this guide](http://guidetomastodon.com), which is much more extensive. But be aware it doesn't cover local-only posts.
 
 ---
 See the source code on [GitHub](https://github.com/steamwings/weather.family).
