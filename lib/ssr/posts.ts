@@ -10,7 +10,6 @@ async function _listPosts() {
   const postData = await Promise.all(files.filter(file => file.endsWith('.yml')).map(async (file) => {
     const qualifiedDir = path.dirname(file);
     const parentDir = path.basename(qualifiedDir);
-    file.split('/').slice(-2, -1)[0]
     return {
       slug: parentDir,
       yml: await fs.readFile(path.join(POSTS_DIR, file)),

@@ -25,7 +25,7 @@ Android:
 
 Worst case, there's always the website on your phone's browser.
 
-> In most apps, posts you create will appear as "Public" by default. Don't worry--unless you explicitly change settings, "Public" is only _public_ among users of weather.family. See the section on post visibility below.
+> ❗ In most apps, posts you create will appear as "Public" by default. Don't worry--unless you explicitly change settings, "Public" is only _public_ among users of weather.family. See the section on post visibility below.
 
 ### Why was this created?
 
@@ -67,15 +67,17 @@ The second set of options is under the chain link icon. These come from a flavor
 
 The use of "Public" and "Local-only" together restricts the post to users logged into a weather.family account.
 
-> ❗ You can add :local_only: (including the colons) to any post or reply to make sure it is local-only, even from apps which don't display local-only as an option. ([ref](https://github.com/hometown-fork/hometown/wiki/Local-only-posting#the-local_only-emoji))
+### How can I be sure my posts or replies are local-only from an app?
 
-### How can I be sure my posts are local-only from a standard Mastodon app?
+The screenshots above show how the website displays posts, but most Mastodon apps won't show the local-only option for new posts or which existing posts are local-only. In many apps, they will just show as "Public", even when they are local-only public.
 
-The screenshots above show how the website displays posts, but most Mastodon apps won't show the local-only option or which posts are local-only.
+You can add :local_only: (including the colons) to any post or reply to make sure it is local-only, even from apps which don't display local-only as an option ([ref](https://github.com/hometown-fork/hometown/wiki/Local-only-posting#the-local_only-emoji)). Using :local_only: should render to a broken chain emoji. ![broken chain emoji](/local-only-emoji.png)
+
+This trick is especially handy if you're replying to a globally public (federated) post and want to make your reply local-only from a phone app.
 
 ### What is the Fediverse?
 
-Imagine if you could comment on a YouTube video from your Instagram account, or tweet a comment on a Facebook account.
+Imagine if you could comment on a YouTube video from your Instagram account, or tweet a comment directly to a Facebook post.
 
 Well, that's never going to happen, but the Fediverse is kind of like that.
 
