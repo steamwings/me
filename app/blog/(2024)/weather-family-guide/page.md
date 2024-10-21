@@ -39,6 +39,10 @@ Mastodon is a free, [open-source](https://opensource.com/resources/what-open-sou
 
 A server is loosely defined as a place where code runs. Every website comes from a server. It takes money to operate servers and time to keep them up to date with important security patches.
 
+### My "Home" feed has junk from other servers. How do I see just stuff from weather.family?
+
+The [Local](https://weather.family/public/local) feed is what's up! Most third-party apps will give you a local feed option, but this is one big omission in the official Mastodon app. There are some solutions related to [Lists](https://fedi.tips/how-to-use-the-lists-feature-on-mastodon/), but maybe I'll detail that in a separate write-up. For now, just ask if you need help.
+
 ### About reply visibility
 
 First, let's discuss reply visibility. Replies default to the visibility of the post they're replying to, though you can restrict the reply visibility manually.
@@ -69,11 +73,13 @@ The use of "Public" and "Local-only" together restricts the post to users logged
 
 ### How can I be sure my posts or replies are local-only from an app?
 
+Again, unless you've changed settings (or your app does something weird that I couldn't anticipate...), your posts will only be visible to those on weather.family. It works as expected on the official Mastodon app.
+
 The screenshots above show how the website displays posts, but most Mastodon apps won't show the local-only option for new posts or which existing posts are local-only. In many apps, they will just show as "Public", even when they are local-only public.
 
 You can add :local_only: (including the colons) to any post or reply to make sure it is local-only, even from apps which don't display local-only as an option ([ref](https://github.com/hometown-fork/hometown/wiki/Local-only-posting#the-local_only-emoji)). Using :local_only: should render to a broken chain emoji. ![broken chain emoji](/local-only-emoji.png)
 
-This trick is especially handy if you're replying to a globally public (federated) post and want to make your reply local-only from a phone app.
+This trick is very useful if you're replying to a globally public (federated) post and want to make your reply local-only from a phone app.
 
 ### What is the Fediverse?
 
