@@ -35,7 +35,7 @@ export async function getPost(slug : string) {
 }
 
 export async function getPostFromDir(dirname : string) {
-  return getPost(dirname.split('/').slice(-1)[0]);
+  return getPost(dirname.split('/').slice(-2)[0]);
 }
 
 export const listPosts = cache(_listPosts);
