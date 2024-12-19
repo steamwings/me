@@ -3,8 +3,9 @@ import { redirect } from "../link";
 
 export async function GET(
   req : NextRequest,
-  { params }: { params: { link: string, link2: string } })
-{
+  props: { params: Promise<{ link: string, link2: string }> }
+) {
+  const params = await props.params;
   const path = params.link + '/' + params.link2
   return redirect(req, path);
 }

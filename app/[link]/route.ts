@@ -1,9 +1,7 @@
 import { NextRequest } from "next/server";
 import { redirect } from "./link";
 
-export async function GET(
-  req : NextRequest,
-  { params }: { params: { link: string } })
-{
+export async function GET(req : NextRequest, props: { params: Promise<{ link: string }> }) {
+  const params = await props.params;
   return redirect(req, params.link);
 }
