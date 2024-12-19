@@ -20,8 +20,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>{children}</body>
-      <SpeedInsights />
       <Analytics />
+      { speedInsights() }
     </html>
   )
+}
+
+function speedInsights() {
+  return process.env.NODE_ENV !== 'development' ?
+    <SpeedInsights /> :
+    null
 }
