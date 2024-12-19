@@ -1,7 +1,8 @@
 import { listLyrics, getLyric } from 'lib/ssr/lyrics';
 import Song from 'components/song';
 
-export default async function Page({ params }) {
+export default async function Page(props) {
+  const params = await props.params;
   const { title } = params
   const { content, mine: _mine } = await getLyric(title);
   return (

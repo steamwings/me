@@ -6,7 +6,8 @@ import { dehumanize } from 'lib/format'
 import { Destination } from 'lib/nav';
 import { getSet, listSets } from 'lib/ssr/sets'
 
-export default async function set({ params }) {
+export default async function set(props) {
+  const params = await props.params;
   const { id } = params
   const { title, note, readings, songs } = await getSet(id)
   return (
