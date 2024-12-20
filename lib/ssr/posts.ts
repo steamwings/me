@@ -35,7 +35,9 @@ export async function getPost(slug : string) {
 }
 
 export async function getPostFromDir(dirname : string) {
-  return getPost(dirname.split('/').slice(-2)[0]);
+  const pieces = dirname.split("/")
+  const post_name_index = pieces.indexOf("blog") + 2
+  return getPost(pieces[post_name_index]);
 }
 
 export const listPosts = cache(_listPosts);
