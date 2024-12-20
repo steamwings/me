@@ -3,6 +3,16 @@ import { toLocaleDate } from 'lib/format'
 import utilStyles from 'styles/utils.module.css'
 import { h3 } from 'lib/anchors'
 
+// This is a shim for React 19 compatibility with react-markdown
+import type { JSX as Jsx } from "react/jsx-runtime";
+declare global {
+  namespace JSX {
+    type ElementClass = Jsx.ElementClass;
+    type Element = Jsx.Element;
+    type IntrinsicElements = Jsx.IntrinsicElements;
+  }
+}
+
 export default function Post({post}: {post: Post}) {
   return (
     <section>

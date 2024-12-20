@@ -2,7 +2,8 @@ import Layout from 'components/layout';
 import utilStyles from 'styles/utils.module.css'
 import { listPoems, getPoem } from 'lib/ssr/poems';
 
-export default async function Page({ params }) {
+export default async function Page(props) {
+  const params = await props.params;
   const { title } = params
   const { content } = await getPoem(title);
   return (
