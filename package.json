@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky",
+    "test": "mocha",
     "update-metadata": "node scripts/update-metadata.js"
   },
   "dependencies": {
@@ -28,9 +29,11 @@
     "@types/js-yaml": "^4.0.5",
     "@types/node": "20.4.2",
     "@types/react": "19.0.1",
+    "chai": "^5.1.2",
     "eslint": "7.32.0",
     "eslint-config-next": "15.1.1",
     "husky": "^9.1.7",
+    "mocha": "^11.0.1",
     "moment-timezone": "^0.5.46"
   },
   "overrides": {
