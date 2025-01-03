@@ -55,19 +55,19 @@ That means if you reply to a public, federated (non-local-only) post (which mean
 
 On the website, you'll see a broken chain icon at the bottom of a post if it's local-only. This post is Public but Local-only, so it's only public to users of weather.family.
 
-![Screen clip with public post and broken chain icon](/local-only-toot.png)
+![Screen clip with public post and broken chain icon](/weather-family-guide/local-only-toot.png)
 
 You may not see local-only options in some Mastodon apps, but new posts on weather.family will still use the default setting.
 
 Currently, there are two sets of options for post visibility. The first is under the lock icon. These are standard [Mastodon options](https://docs.joinmastodon.org/user/posting/#privacy).
 
-![Screen clipping with "Public", "Unlisted", "Followers only", "Mentioned people only"](/followers-only.png)
+![Screen clipping with "Public", "Unlisted", "Followers only", "Mentioned people only"](/weather-family-guide/followers-only.png)
 
 The default is currently "Public". You may prefer "Followers only" and you can make that your default in your account settings. "Mentioned people only" functions as Mastodon's equivalent of direct messages (DMs).
 
 The second set of options is under the chain link icon. These come from a flavor of Mastodon we use called Hometown. **In short, Local-only posts are _not_ federated**--meaning they won't be shared to other servers. More [here](https://github.com/hometown-fork/hometown/wiki/Local-only-posting).
 
-![Screen clipping with "Federated" and "Local-only" post options.](/local-only.png)
+![Screen clipping with "Federated" and "Local-only" post options.](/weather-family-guide/local-only.png)
 
 The use of "Public" and "Local-only" together restricts the post to users logged into a weather.family account.
 
@@ -77,7 +77,7 @@ Again, unless you've changed settings (or your app does something weird that I c
 
 The screenshots above show how the website displays posts, but most Mastodon apps won't show the local-only option for new posts or which existing posts are local-only. In many apps, they will just show as "Public", even when they are local-only public.
 
-You can add :local_only: (including the colons) to any post or reply to make sure it is local-only, even from apps which don't display local-only as an option ([ref](https://github.com/hometown-fork/hometown/wiki/Local-only-posting#the-local_only-emoji)). Using :local_only: should render to a broken chain emoji. ![broken chain emoji](/local-only-emoji.png)
+You can add :local_only: (including the colons) to any post or reply to make sure it is local-only, even from apps which don't display local-only as an option ([ref](https://github.com/hometown-fork/hometown/wiki/Local-only-posting#the-local_only-emoji)). Using :local_only: should render to a broken chain emoji. ![broken chain emoji](/weather-family-guide/local-only-emoji.png)
 
 This trick is very useful if you're replying to a globally public (federated) post and want to make your reply local-only from a phone app.
 

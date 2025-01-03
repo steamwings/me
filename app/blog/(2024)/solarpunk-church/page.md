@@ -6,7 +6,7 @@ I've been in the church my whole life and a tech nerd just as long. My early mem
 
 That has yet to change, but I hope it does soon.
 
-Putting "solarpunk" next to "church" will undoubtedly terrify some. But the last few months, it's had my imagination going absolutely wild. If there is any impetus to consider how we might better love our neighbors, bring people into fellowship, use everyone's gifts, and steward our Earth and resources, read on.
+Putting *solarpunk* next to *church* will undoubtedly terrify some. But the last few months, it's had my imagination going absolutely wild. If there is any impetus to consider how we might better love our neighbors, bring people into fellowship, use everyone's gifts, and steward our Earth and resources, read on.
 
 ### Some honest questions
 
@@ -33,6 +33,8 @@ If Jesus is the prototypical new human ("firstborn from among the dead", 1 Colos
 
 For me, biblical garden poetry feels at home with a backdrop of sprawling tech-enabled gardens and solar-powered sanctuaries. Who knows what the new Jerusalem will look like? For today, though, let's find the next first step.
 
+![People talk in a sunlit room with various items and tools and plants, a large cross on the back window](/solarpunk-church/multiuse-space.jpg#center)
+
 ### What are you actually suggesting?
 
 Here are a few tangible ideas, by no means exhaustive:
@@ -50,11 +52,11 @@ There's no replacement for Jesus and his kingdom. And there's no proposed addend
 
 There is a risk to be stated in that solarpunk perhaps has the makings of a religion in itself. Some today may follow it as such, finding their purpose and meaning in it. It could become an idol and a distraction for the Church. But so could most anything else.
 
-### Are you just trying to be "relevant"?
+### Are you just trying to be *relevant*?
 
-Trying to make the church relevant by talking about something when that something is questionably relevant to the church's mission _is_ a problem. But there are strong theological justifications for the inherent relevance of sustainability (environmental stewardship) and community-based initiatives. In many senses, these ideas are intertwined with the story of the Bible from the garden to the early church to the new earth.
+Trying to make the church relevant by talking about something when that something is questionably relevant to the church's mission *is* a problem. But there are strong theological justifications for the inherent relevance of sustainability (environmental stewardship) and community-based initiatives. In many senses, these ideas are intertwined with the story of the Bible from the garden to the early church to the new earth.
 
-### But is this really _ministry_?
+### But is this really *ministry*?
 
 The easy rhetorical response is something like, "Should the church have a food pantry?". But I'll admit I'd rather not get into detail arguing about church priorities.
 
@@ -64,7 +66,9 @@ A church can only prioritize so many things and have so many ministries. But one
 
 I think this question will be a legimate obstacle if you suggest a community garden or a tool library or a repair cafe to your church. Ultimately, the right answers will have to suit your context and the gifts and interests there.
 
-But here are some out-of-context verses to consider.
+For me, the opportunity to pursue a biblical calling directly through technology and in my community is something I never dreamed possible. Call me basic but I can't help feeling like maybe I was made for "such a time as this" (Esther 4:14).
+
+For now, my goal is to make you think. To conclude, here are some out-of-context verses to consider.
 
 > God blessed them and said to them, “Be fruitful and increase in number; fill the earth and subdue it. Rule over the fish in the sea and the birds in the sky and over every living creature that moves on the ground.” (Genesis 1:28 NIV)
 
