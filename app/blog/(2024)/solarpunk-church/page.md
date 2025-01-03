@@ -35,7 +35,7 @@ If Jesus is the prototypical new human ("firstborn from among the dead", 1 Colos
 
 For me, biblical garden poetry feels at home with a backdrop of sprawling tech-enabled gardens and solar-powered sanctuaries. Who knows what the new Jerusalem will look like? For today, though, let's find the next first step.
 
-![People talk in a sunlit room with various items and tools and plants, a large cross on the back window](/solarpunk-church/multiuse-space.jpg)
+![Rabbits sit on a garden path, which leads past vegetables and a solar panel array to a prominently-steepled church. A line of wind turbines fades into distant golden clouds.](/solarpunk-church/garden-path-to-church.png)
 
 ### What are you actually suggesting?
 
@@ -70,6 +70,8 @@ Trying to make the church relevant by talking about something when that somethin
 The easy rhetorical response is something like, "Should the church have a food pantry?". But I'll admit I'd rather not get into detail arguing about church priorities.
 
 A church can only prioritize so many things and have so many ministries. But one of the key pieces of the solarpunk movement is community involvement. Yes, I hope you'll consider enabling new ministries, but I'm also imagining empowering people already in your church in new ways and involving others in the community who might never have set foot in your church.
+
+![People talk in a sunlit room with various items and tools and plants, a large cross on the back window](/solarpunk-church/multiuse-space.jpg)
 
 ### But...why though?
 
