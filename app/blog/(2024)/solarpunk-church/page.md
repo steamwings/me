@@ -43,10 +43,17 @@ Here are a few tangible ideas, by no means exhaustive:
 
 - Fix stuff instead of throwing it away, from leggings to lamps. (Heard of a [repair cafe](https://www.repaircafe.org/en/about/)?)
 - Grow and [recover](https://en.wikipedia.org/wiki/Food_rescue) food.
-- Foster purpose-driven technological creativity, from community websites to hydroponics to recycling.
-- Solve problems for people in the community (sometimes called [mutual aid](https://en.wikipedia.org/wiki/Mutual_aid)).
-- Share tools, knowledge, time, and space for the above.
+- Create spaces for sustainability-focused creativity, from building community websites to hydroponics to recycling.
+- Host an easily accessibly community fridge (or [freedge](https://freedge.org)).
+
+More generally:
+
+- Directly address needs (clothing, food, shelter) of people in the community.
+- Share tools, knowledge, time, and space for all the above.
+- **Connect with and empower local organizations already doing these things.**
 - Get better utilization of church buildings and land.
+
+Many of these suggestions are associated with [mutual aid](https://en.wikipedia.org/wiki/Mutual_aid), which focuses on community cooperation rather than charity, which assumes inequity and is often patronizing.
 
 ### Is this a false gospel?
 
