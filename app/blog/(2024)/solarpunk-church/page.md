@@ -73,11 +73,11 @@ A church can only prioritize so many things and have so many ministries. But one
 
 ### But...why though?
 
-I think this question will be a legimate obstacle if you suggest a community garden or a tool library or a repair cafe to your church. Ultimately, the right answers will have to suit your context and the gifts and interests there.
+I think this question will be a legimate obstacle if you suggest a community garden or a tool library or a repair cafe or a free fridge to your church. Ultimately, the right answers will have to suit your context and the gifts and interests there.
 
 For me, the opportunity to pursue a biblical calling directly through technology and in my community is something I never dreamed possible. Call me basic but I can't help feeling like maybe I was made for "such a time as this" (Esther 4:14).
 
-For now, my goal is to make you think. To conclude, here are some out-of-context verses to consider.
+For now, my goal is to make you think. To conclude, here are some verses to consider.
 
 > God blessed them and said to them, “Be fruitful and increase in number; fill the earth and subdue it. Rule over the fish in the sea and the birds in the sky and over every living creature that moves on the ground.” (Genesis 1:28 NIV)
 
