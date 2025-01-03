@@ -8,6 +8,8 @@ That has yet to change, but I hope it does soon.
 
 Putting *solarpunk* next to *church* will undoubtedly terrify some. But the last few months, it's had my imagination going absolutely wild. If there is any impetus to consider how we might better love our neighbors, bring people into fellowship, use everyone's gifts, and steward our Earth and resources, read on.
 
+![A huge cathedral with solar panel roofing sits next to greenhouses](/solarpunk-church/cathedral.png)
+
 ### Some honest questions
 
 First, let's squeeze some brain juice.
@@ -33,7 +35,7 @@ If Jesus is the prototypical new human ("firstborn from among the dead", 1 Colos
 
 For me, biblical garden poetry feels at home with a backdrop of sprawling tech-enabled gardens and solar-powered sanctuaries. Who knows what the new Jerusalem will look like? For today, though, let's find the next first step.
 
-![People talk in a sunlit room with various items and tools and plants, a large cross on the back window](/solarpunk-church/multiuse-space.jpg#center)
+![People talk in a sunlit room with various items and tools and plants, a large cross on the back window](/solarpunk-church/multiuse-space.jpg)
 
 ### What are you actually suggesting?
 

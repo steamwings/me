@@ -32,11 +32,5 @@ h1,h2,h3 > a {
 img {
   max-width: 100%;
   display: block;
-}
-
-/* Markdown image formatting hacks */
-
-img[src*='#center'] {
-  display: block;
   margin: auto;
 }
