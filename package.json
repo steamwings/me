@@ -2,13 +2,20 @@
   "name": "zweather",
   "version": "0.2.1",
   "private": true,
+  "mocha": {
+    "$schema": "https://json.schemastore.org/mocharc.json",
+    "node-option": [
+      "import=tsx"
+    ],
+    "extension": "ts"
+  },
   "scripts": {
     "dev": "next dev --turbopack -p 3002",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky",
-    "test": "mocha",
+    "test": "mocha test/**/*.ts",
     "update-metadata": "node scripts/update-metadata.js"
   },
   "dependencies": {
@@ -26,15 +33,22 @@
     "react-markdown": "^8.0.7"
   },
   "devDependencies": {
+    "@testing-library/react": "^16.1.0",
+    "@types/chai": "^5.0.1",
+    "@types/chai-dom": "^1.11.3",
     "@types/js-yaml": "^4.0.5",
+    "@types/mocha": "^10.0.10",
     "@types/node": "20.4.2",
     "@types/react": "19.0.1",
+    "@types/testing-library__react": "^10.0.1",
     "chai": "^5.1.2",
+    "chai-dom": "^1.12.1",
     "eslint": "7.32.0",
     "eslint-config-next": "15.1.1",
     "husky": "^9.1.7",
     "mocha": "^11.0.1",
-    "moment-timezone": "^0.5.46"
+    "moment-timezone": "^0.5.46",
+    "tsx": "^4.19.2"
   },
   "overrides": {
     "@types/react": "19.0.1"
