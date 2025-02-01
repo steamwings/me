@@ -1,0 +1,26 @@
+meta {
+  name: me
+}
+
+auth {
+  mode: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+vars:pre-request {
+  token: 
+  ~xdata: 
+}
+
+script:pre-request {
+  const CryptoJS = require('crypto-js')
+  key = bru.getEnvVar("apiKey");
+  epochSecond = Math.ceil(Date.now()/1000).toString();
+  data = key + epochSecond;
+  token = CryptoJS.SHA512(data).toString(CryptoJS.enc.Base64);
+  bru.setVar("xdata", data);
+  bru.setVar("token", token);
+}

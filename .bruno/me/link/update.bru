@@ -1,0 +1,22 @@
+meta {
+  name: update
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{baseUrl}}/api/link
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  { 
+      "path": "vercel",
+      "destination": "https://vercel.com/about"
+  }
+}
