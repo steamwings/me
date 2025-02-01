@@ -3,5 +3,5 @@ import { redirect } from "./link";
 
 export async function GET(req : NextRequest, props: { params: Promise<{ link: string }> }) {
   const params = await props.params;
-  return redirect(req, params.link);
+  return await redirect(req, params.link);
 }

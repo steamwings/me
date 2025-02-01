@@ -7,5 +7,5 @@ export async function GET(
 ) {
   const params = await props.params;
   const path = params.link + '/' + params.link2
-  return redirect(req, path);
+  return await redirect(req, path);
 }
