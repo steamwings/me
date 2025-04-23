@@ -17,10 +17,10 @@ vars:pre-request {
 
 script:pre-request {
   const CryptoJS = require('crypto-js')
-  key = bru.getEnvVar("apiKey");
-  epochSecond = Math.ceil(Date.now()/1000).toString();
-  data = key + epochSecond;
-  token = CryptoJS.SHA512(data).toString(CryptoJS.enc.Base64);
+  const key = bru.getEnvVar("apiKey");
+  var epochSecond = Math.ceil(Date.now()/1000).toString();
+  const data = key + epochSecond;
+  const token = CryptoJS.SHA512(data).toString(CryptoJS.enc.Base64);
   bru.setVar("xdata", data);
   bru.setVar("token", token);
 }
