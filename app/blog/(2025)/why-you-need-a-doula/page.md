@@ -1,5 +1,5 @@
 
-For most electrical work, I prefer to figure it out myself and save a bunch of money, rather than hire an electrician. (Yes, I still do my best to keep everything "up to code".) But for our first birth? We figured we'd avoid DIY disasters.
+For most electrical work, I prefer to figure it out myself and save a bunch of money, rather than hire an electrician. But for our first birth? We figured we'd avoid DIY disasters.
 
 I thought doulas were for people from eastern cultures or maybe rich people who like attention. **Actually, doulas fill some serious gaps in birth care.**
 
