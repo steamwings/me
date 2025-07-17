@@ -53,6 +53,32 @@ export default function Home() {
         <div className={
           utilStyles.grid
         }>
+          <Link href="/poems"
+            className={styles.card}>
+            <span>
+              <h2>Poems</h2>&nbsp;&#x1f33b;
+            </span>
+            <p>A small smattering of poor poetry</p>
+          </Link>
+
+          <Link href="/blog"
+            className={styles.card}>
+            <span>
+              <h2>Blog</h2>&nbsp;&#x1f4e2;
+            </span>
+            <p>
+              Things I thought I ought to share
+            </p>
+          </Link>
+
+          <Link href="/sets"
+            className={styles.card}>
+            <span>
+              <h2>Sets</h2>&nbsp;&#x1f4d6;
+            </span>
+            <p>Lyrics and readings for worship nights</p>
+          </Link>
+
           <Link href="https://www.youtube.com/channel/UCYtpQXhep8dADXhU11xsBXA"
             className={styles.card}>
             <span>
@@ -67,32 +93,6 @@ export default function Home() {
               <h2>Skills</h2>&nbsp;&#x1f4bb;
             </span>
             <p>An outdated list of tech and tools I&apos;ve used</p>
-          </Link>
-
-          <Link href="/blog"
-            className={styles.card}>
-            <span>
-              <h2>Blog</h2>&nbsp;&#x1f4e2;
-            </span>
-            <p>
-              Things I thought I ought to share
-            </p>
-          </Link>
-
-          <Link href="/poems"
-            className={styles.card}>
-            <span>
-              <h2>Poems</h2>&nbsp;&#x1f33b;
-            </span>
-            <p>A small smattering of poor poetry</p>
-          </Link>
-
-          <Link href="/sets"
-            className={styles.card}>
-            <span>
-              <h2>Sets</h2>&nbsp;&#x1f4d6;
-            </span>
-            <p>Lyrics and readings for worship nights</p>
           </Link>
 
         </div>
