@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky",
-    "update-metadata": "node scripts/update-metadata.js"
+    "update-metadata": "node scripts/update-metadata.js",
+    "update-poem-metadata": "node scripts/update-poem-metadata.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
