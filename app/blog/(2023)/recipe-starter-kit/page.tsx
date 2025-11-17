@@ -1,9 +1,10 @@
 import Post from 'components/post'
-import { getPostFromDir } from 'lib/ssr/posts';
+import Content, { frontmatter } from './content.mdx'
 
-export default async function Tasty({ params }) {
-  const post = await getPostFromDir(__dirname);
+export default function Tasty() {
   return (
-    <Post post={post}/>
+    <Post metadata={frontmatter}>
+      <Content />
+    </Post>
   );
 }
