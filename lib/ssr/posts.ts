@@ -1,43 +1,27 @@
 import path from 'path'
-import yaml from 'js-yaml'
 import {promises as fs} from 'fs'
 import {cache} from 'react'
+import matter from 'gray-matter'
 
 export const POSTS_DIR = path.join(process.cwd(), 'app', 'blog');
 
 async function _listPosts() {
   const files = await fs.readdir(POSTS_DIR, {recursive: true})
-  const postData = await Promise.all(files.filter(file => file.endsWith('.yml')).map(async (file) => {
+  const postData = await Promise.all(files.filter(file => file.endsWith('content.mdx')).map(async (file) => {
     const qualifiedDir = path.dirname(file);
     const parentDir = path.basename(qualifiedDir);
+    const content = await fs.readFile(path.join(POSTS_DIR, file), 'utf8')
+    const { data } = matter(content)
+
     return {
       slug: parentDir,
-      yml: await fs.readFile(path.join(POSTS_DIR, file)),
-      content: await fs.readFile(path.join(POSTS_DIR, qualifiedDir, 'page.md'))
+      title: data.title,
+      written: data.written,
+      updated: data.updated,
     }
   }));
-  return postData.map(({slug, yml, content}) => {
-    const metadata = <object> yaml.load(yml.toString());
-    return <Post> {
-      content: content.toString(),
-      ... metadata,
-      slug
-    };
-  });
-}
 
-export async function getPost(slug : string) {
-  const post = await listPosts().then(posts => posts.find(post => post.slug === slug));
-  if (post === undefined) { // thrown at SSR time
-    throw new Error(`Post with slug ${slug} not found`);
-  }
-  return post;
-}
-
-export async function getPostFromDir(dirname : string) {
-  const pieces = dirname.split("/")
-  const post_name_index = pieces.indexOf("blog") + 2
-  return getPost(pieces[post_name_index]);
+  return postData.sort((a, b) => new Date(b.written).getTime() - new Date(a.written).getTime());
 }
 
 export const listPosts = cache(_listPosts);

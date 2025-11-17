@@ -1,6 +1,6 @@
 import { listPosts } from 'lib/ssr/posts';
 
-export default async function Page({ params }) {
+export default async function Page() {
   const posts = await listPosts();
   return (
     <div>
