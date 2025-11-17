@@ -6,7 +6,7 @@ import 'styles/globals.css'
 
 export const metadata: Metadata = {
   title: 'Zander',
-  description: 'Zander Weather - Jesus-worshipper, dad, developer',
+  description: 'Zander Weather - dad, dev, poet, Jesus-worshipper',
   icons: {
     icon: '/z.ico',
   }
