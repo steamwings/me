@@ -13,6 +13,9 @@ export default async function Page({ params }) {
             <a href={`/poems/${title}`}>{humanize(title)}</a>
           </li>
         ))}
+        <li key="My Country 'Tis for Thee">
+          <a href='/blog/my-country-tis-for-thee'>My Country 'Tis for Thee</a>
+        </li>
       </ul>
     </Layout>
   )
