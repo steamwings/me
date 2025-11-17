@@ -25,6 +25,7 @@ export function TwoColumn({ children }: { children: React.ReactNode }) {
         gridTemplateColumns: '1fr 1fr',
         gap: '2rem',
         margin: '1rem 0',
+        'overflow-x': 'scroll',
       }}
     >
       <div style={{ whiteSpace: 'pre' }}>{leftColumn}</div>
