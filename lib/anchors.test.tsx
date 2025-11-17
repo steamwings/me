@@ -1,13 +1,10 @@
 import { describe, it, expect } from 'vitest'
+import { generateSlug } from './anchors'
 
 /**
  * Tests for lib/anchors.tsx
  *
- * Note: The h3 component is designed for use with MDX and expects children
- * in a specific format that MDX provides. Full component rendering tests
- * are difficult in a standard test environment due to MDX-specific behavior.
- *
- * The component contains a generateSlug function that:
+ * Tests the generateSlug function which:
  * - Trims whitespace
  * - Converts to lowercase
  * - Removes non-alphanumeric characters (except spaces and hyphens)
@@ -16,16 +13,6 @@ import { describe, it, expect } from 'vitest'
  */
 
 describe('anchors - slug generation logic', () => {
-  // Helper function that simulates the generateSlug behavior
-  const generateSlug = (str: string) => {
-    str = str.replace(/^\s+|\s+$/g, "");
-    str = str.toLowerCase();
-    str = str
-      .replace(/[^a-z0-9 -]/g, "")
-      .replace(/\s+/g, "-")
-      .replace(/-+/g, "-");
-    return str;
-  };
 
   it('should generate slug from simple text', () => {
     expect(generateSlug('Hello World')).toBe('hello-world')

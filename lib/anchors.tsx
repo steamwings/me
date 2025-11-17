@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const generateSlug = (str: string) => {
+export const generateSlug = (str: string) => {
   str = str.replace(/^\s+|\s+$/g, "");
   str = str.toLowerCase();
   str = str
@@ -9,6 +9,7 @@ const generateSlug = (str: string) => {
     .replace(/-+/g, "-");
   return str;
 };
+
 export const h3 = ({ node, ...props }) => {
   const slug = generateSlug(props.children[0]);
   return (
