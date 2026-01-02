@@ -11,16 +11,23 @@ auth:bearer {
 }
 
 vars:pre-request {
-  token: 
-  ~xdata: 
+  token:
+  ~xdata:
 }
 
 script:pre-request {
   const CryptoJS = require('crypto-js')
+  const { randomUUID } = require('crypto')
+
   const key = bru.getEnvVar("apiKey");
-  var epochSecond = Math.ceil(Date.now()/1000).toString();
-  const data = key + epochSecond;
-  const token = CryptoJS.SHA512(data).toString(CryptoJS.enc.Base64);
-  bru.setVar("xdata", data);
+  const epochSecond = Math.ceil(Date.now()/1000).toString();
+  const nonce = randomUUID(); // Generate unique nonce for replay protection
+
+  // Use HMAC-SHA512 instead of plain SHA512
+  const message = epochSecond + ':' + nonce;
+  const token = CryptoJS.HmacSHA512(message, key).toString(CryptoJS.enc.Base64);
+
+  bru.setVar("xdata", message);
   bru.setVar("token", token);
+  req.setHeader("X-Nonce", nonce);
 }
