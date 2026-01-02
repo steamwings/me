@@ -1,5 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { NextRequest } from 'next/server'
+import { randomUUID } from 'crypto'
+import { generateToken } from 'lib/auth/generate-token'
+import { nonceCache } from 'lib/auth/nonce-cache'
 
 // Mock the auth module to expose internal functions for testing
 vi.mock('next/server', async () => {
@@ -13,10 +16,12 @@ vi.mock('next/server', async () => {
 })
 
 describe('auth middleware', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     vi.clearAllMocks()
     // Set API_KEY environment variable for tests
     process.env.API_KEY = 'test-secret-key'
+    // Clear nonce cache between tests
+    nonceCache.clear()
   })
 
   describe('authMiddleware', () => {
@@ -31,11 +36,28 @@ describe('auth middleware', () => {
       expect(response?.body).toEqual({ error: 'No token provided.' })
     })
 
-    it('should return 401 when Authorization header is malformed', async () => {
+    it('should return 401 when no nonce is provided', async () => {
       const { authMiddleware } = await import('./auth')
       const request = new NextRequest('http://localhost:3000/api/link', {
         headers: {
-          'Authorization': 'invalid-format'
+          'Authorization': 'Bearer some-token'
+        }
+      })
+
+      const response = await authMiddleware(request)
+
+      expect(response).toBeDefined()
+      expect(response?.status).toBe(401)
+      expect(response?.body).toEqual({ error: 'No nonce provided.' })
+    })
+
+    it('should return 401 when Authorization header is malformed', async () => {
+      const { authMiddleware } = await import('./auth')
+      const nonce = randomUUID()
+      const request = new NextRequest('http://localhost:3000/api/link', {
+        headers: {
+          'Authorization': 'invalid-format',
+          'X-Nonce': nonce
         }
       })
 
@@ -47,9 +69,11 @@ describe('auth middleware', () => {
 
     it('should return 401 for invalid token', async () => {
       const { authMiddleware } = await import('./auth')
+      const nonce = randomUUID()
       const request = new NextRequest('http://localhost:3000/api/link', {
         headers: {
-          'Authorization': 'Bearer invalid-token-123'
+          'Authorization': 'Bearer invalid-token-123',
+          'X-Nonce': nonce
         }
       })
 
@@ -65,15 +89,14 @@ describe('auth middleware', () => {
     it('should return undefined for valid token (allow access)', async () => {
       // Generate a valid token for the current timestamp
       const timestamp = Math.floor(Date.now() / 1000)
-      const key = 'test-secret-key'
-      const data = key + timestamp.toString()
-      const hash = await crypto.subtle.digest('SHA-512', new TextEncoder().encode(data))
-      const validToken = Buffer.from(hash).toString('base64')
+      const nonce = randomUUID()
+      const validToken = await generateToken(timestamp, nonce)
 
       const { authMiddleware } = await import('./auth')
       const request = new NextRequest('http://localhost:3000/api/link', {
         headers: {
-          'Authorization': `Bearer ${validToken}`
+          'Authorization': `Bearer ${validToken}`,
+          'X-Nonce': nonce
         }
       })
 
@@ -86,15 +109,14 @@ describe('auth middleware', () => {
     it('should accept token from next second', async () => {
       // Generate a valid token for the next second
       const timestamp = Math.ceil(Date.now() / 1000)
-      const key = 'test-secret-key'
-      const data = key + timestamp.toString()
-      const hash = await crypto.subtle.digest('SHA-512', new TextEncoder().encode(data))
-      const validToken = Buffer.from(hash).toString('base64')
+      const nonce = randomUUID()
+      const validToken = await generateToken(timestamp, nonce)
 
       const { authMiddleware } = await import('./auth')
       const request = new NextRequest('http://localhost:3000/api/link', {
         headers: {
-          'Authorization': `Bearer ${validToken}`
+          'Authorization': `Bearer ${validToken}`,
+          'X-Nonce': nonce
         }
       })
 
@@ -103,13 +125,45 @@ describe('auth middleware', () => {
       expect(response).toBeUndefined()
     })
 
+    it('should reject replay attack (same nonce used twice)', async () => {
+      const timestamp = Math.floor(Date.now() / 1000)
+      const nonce = randomUUID()
+      const validToken = await generateToken(timestamp, nonce)
+
+      const { authMiddleware } = await import('./auth')
+
+      // First request should succeed
+      const request1 = new NextRequest('http://localhost:3000/api/link', {
+        headers: {
+          'Authorization': `Bearer ${validToken}`,
+          'X-Nonce': nonce
+        }
+      })
+      const response1 = await authMiddleware(request1)
+      expect(response1).toBeUndefined()
+
+      // Second request with same nonce should fail (replay attack)
+      const request2 = new NextRequest('http://localhost:3000/api/link', {
+        headers: {
+          'Authorization': `Bearer ${validToken}`,
+          'X-Nonce': nonce
+        }
+      })
+      const response2 = await authMiddleware(request2)
+      expect(response2).toBeDefined()
+      expect(response2?.status).toBe(401)
+      expect(response2?.body).toEqual({ error: 'Nonce already used.' })
+    })
+
     it('should handle missing API_KEY environment variable', async () => {
       delete process.env.API_KEY
 
       const { authMiddleware } = await import('./auth')
+      const nonce = randomUUID()
       const request = new NextRequest('http://localhost:3000/api/link', {
         headers: {
-          'Authorization': 'Bearer some-token'
+          'Authorization': 'Bearer some-token',
+          'X-Nonce': nonce
         }
       })
 
@@ -121,46 +175,45 @@ describe('auth middleware', () => {
   })
 
   describe('token generation', () => {
-    it('should generate consistent tokens for same timestamp', async () => {
+    it('should generate consistent tokens for same timestamp and nonce', async () => {
       const timestamp = 1234567890
-      const key = 'test-secret-key'
+      const nonce = randomUUID()
 
-      // Generate token twice with same timestamp
-      const data = key + timestamp.toString()
-      const hash1 = await crypto.subtle.digest('SHA-512', new TextEncoder().encode(data))
-      const token1 = Buffer.from(hash1).toString('base64')
-
-      const hash2 = await crypto.subtle.digest('SHA-512', new TextEncoder().encode(data))
-      const token2 = Buffer.from(hash2).toString('base64')
+      // Generate token twice with same timestamp and nonce
+      const token1 = await generateToken(timestamp, nonce)
+      const token2 = await generateToken(timestamp, nonce)
 
       expect(token1).toBe(token2)
     })
 
     it('should generate different tokens for different timestamps', async () => {
-      const key = 'test-secret-key'
+      const nonce = randomUUID()
 
-      const timestamp1 = 1234567890
-      const data1 = key + timestamp1.toString()
-      const hash1 = await crypto.subtle.digest('SHA-512', new TextEncoder().encode(data1))
-      const token1 = Buffer.from(hash1).toString('base64')
-
-      const timestamp2 = 1234567891
-      const data2 = key + timestamp2.toString()
-      const hash2 = await crypto.subtle.digest('SHA-512', new TextEncoder().encode(data2))
-      const token2 = Buffer.from(hash2).toString('base64')
+      const token1 = await generateToken(1234567890, nonce)
+      const token2 = await generateToken(1234567891, nonce)
 
       expect(token1).not.toBe(token2)
     })
 
-    it('should use SHA-512 hashing', async () => {
+    it('should generate different tokens for different nonces', async () => {
       const timestamp = 1234567890
-      const key = 'test-secret-key'
-      const data = key + timestamp.toString()
 
-      const hash = await crypto.subtle.digest('SHA-512', new TextEncoder().encode(data))
-      const token = Buffer.from(hash).toString('base64')
+      const nonce1 = randomUUID()
+      const token1 = await generateToken(timestamp, nonce1)
 
-      // SHA-512 produces 64-byte hash, base64 encoded is 88 characters
+      const nonce2 = randomUUID()
+      const token2 = await generateToken(timestamp, nonce2)
+
+      expect(token1).not.toBe(token2)
+    })
+
+    it('should use HMAC-SHA-512', async () => {
+      const timestamp = 1234567890
+      const nonce = randomUUID()
+
+      const token = await generateToken(timestamp, nonce)
+
+      // HMAC-SHA-512 produces 64-byte signature, base64 encoded is 88 characters
       expect(token.length).toBe(88)
     })
   })

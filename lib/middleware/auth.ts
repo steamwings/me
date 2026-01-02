@@ -1,33 +1,38 @@
 import { NextRequest, NextResponse } from "next/server";
+import { nonceCache } from "lib/auth/nonce-cache";
+import { generateToken } from "lib/auth/generate-token";
 
 export async function authMiddleware(request: NextRequest) {
   const requestToken = request.headers.get('Authorization')?.split(' ')[1]
+  const nonce = request.headers.get('X-Nonce')
+
   if (requestToken == undefined) {
     return NextResponse.json({error: 'No token provided.'}, {status: 401});
   }
-  else if (!(await validToken(requestToken))) {
+
+  if (nonce == undefined) {
+    return NextResponse.json({error: 'No nonce provided.'}, {status: 401});
+  }
+
+  if (nonceCache.has(nonce)) {
+    return NextResponse.json({error: 'Nonce already used.'}, {status: 401});
+  }
+
+  if (!(await validToken(requestToken, nonce))) {
     return NextResponse.json({error: 'Access denied. Level 8 clearance required.'}, {status: 401});
   }
+
+  nonceCache.add(nonce);
 }
 
-async function validToken(requestToken: string) {
+async function validToken(requestToken: string, nonce: string) {
   try {
-    const lastSecondToken = await generateToken(Math.floor(Date.now()/1000))
-    const nextSecondToken = await generateToken(Math.ceil(Date.now()/1000))
+    const lastSecondToken = await generateToken(Math.floor(Date.now()/1000), nonce)
+    const nextSecondToken = await generateToken(Math.ceil(Date.now()/1000), nonce)
     return requestToken === lastSecondToken ||
       requestToken === nextSecondToken
   } catch (error) {
     console.error(error)
     return false
   }
-}
-
-async function generateToken(timestamp: number) {
-  const key = process.env.API_KEY
-  if (key === undefined) {
-    throw new Error('API_KEY not defined')
-  }
-  const data = key + timestamp.toString()
-  const hash = await crypto.subtle.digest('SHA-512', new TextEncoder().encode(data))
-  return Buffer.from(hash).toString('base64');
 }

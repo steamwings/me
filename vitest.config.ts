@@ -14,6 +14,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './'),
       '@/lib': path.resolve(__dirname, './lib'),
       '@/components': path.resolve(__dirname, './components'),
+      'lib': path.resolve(__dirname, './lib'),
     },
   },
 })
