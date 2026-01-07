@@ -40,7 +40,8 @@ describe('auth middleware', () => {
       const { authMiddleware } = await import('./auth')
       const request = new NextRequest('http://localhost:3000/api/link', {
         headers: {
-          'Authorization': 'Bearer some-token'
+          'Authorization': 'Bearer some-token',
+          'X-Timestamp': Math.floor(Date.now() / 1000).toString()
         }
       })
 
@@ -51,13 +52,50 @@ describe('auth middleware', () => {
       expect(response?.body).toEqual({ error: 'No nonce provided.' })
     })
 
-    it('should return 401 when Authorization header is malformed', async () => {
+    it('should return 401 when no timestamp is provided', async () => {
       const { authMiddleware } = await import('./auth')
       const nonce = randomUUID()
       const request = new NextRequest('http://localhost:3000/api/link', {
         headers: {
-          'Authorization': 'invalid-format',
+          'Authorization': 'Bearer some-token',
           'X-Nonce': nonce
+        }
+      })
+
+      const response = await authMiddleware(request)
+
+      expect(response).toBeDefined()
+      expect(response?.status).toBe(401)
+      expect(response?.body).toEqual({ error: 'No timestamp provided.' })
+    })
+
+    it('should return 401 when timestamp format is invalid', async () => {
+      const { authMiddleware } = await import('./auth')
+      const nonce = randomUUID()
+      const request = new NextRequest('http://localhost:3000/api/link', {
+        headers: {
+          'Authorization': 'Bearer some-token',
+          'X-Nonce': nonce,
+          'X-Timestamp': 'not-a-number'
+        }
+      })
+
+      const response = await authMiddleware(request)
+
+      expect(response).toBeDefined()
+      expect(response?.status).toBe(401)
+      expect(response?.body).toEqual({ error: 'Invalid timestamp format.' })
+    })
+
+    it('should return 401 when Authorization header is malformed', async () => {
+      const { authMiddleware } = await import('./auth')
+      const nonce = randomUUID()
+      const timestamp = Math.floor(Date.now() / 1000)
+      const request = new NextRequest('http://localhost:3000/api/link', {
+        headers: {
+          'Authorization': 'invalid-format',
+          'X-Nonce': nonce,
+          'X-Timestamp': timestamp.toString()
         }
       })
 
@@ -70,10 +108,12 @@ describe('auth middleware', () => {
     it('should return 401 for invalid token', async () => {
       const { authMiddleware } = await import('./auth')
       const nonce = randomUUID()
+      const timestamp = Math.floor(Date.now() / 1000)
       const request = new NextRequest('http://localhost:3000/api/link', {
         headers: {
           'Authorization': 'Bearer invalid-token-123',
-          'X-Nonce': nonce
+          'X-Nonce': nonce,
+          'X-Timestamp': timestamp.toString()
         }
       })
 
@@ -96,7 +136,8 @@ describe('auth middleware', () => {
       const request = new NextRequest('http://localhost:3000/api/link', {
         headers: {
           'Authorization': `Bearer ${validToken}`,
-          'X-Nonce': nonce
+          'X-Nonce': nonce,
+          'X-Timestamp': timestamp.toString()
         }
       })
 
@@ -106,9 +147,9 @@ describe('auth middleware', () => {
       expect(response).toBeUndefined()
     })
 
-    it('should accept token from next second', async () => {
-      // Generate a valid token for the next second
-      const timestamp = Math.ceil(Date.now() / 1000)
+    it('should accept timestamp within valid window', async () => {
+      // Generate a valid token for a timestamp 10 seconds in the past
+      const timestamp = Math.floor(Date.now() / 1000) - 10
       const nonce = randomUUID()
       const validToken = await generateToken(timestamp, nonce)
 
@@ -116,13 +157,36 @@ describe('auth middleware', () => {
       const request = new NextRequest('http://localhost:3000/api/link', {
         headers: {
           'Authorization': `Bearer ${validToken}`,
-          'X-Nonce': nonce
+          'X-Nonce': nonce,
+          'X-Timestamp': timestamp.toString()
         }
       })
 
       const response = await authMiddleware(request)
 
       expect(response).toBeUndefined()
+    })
+
+    it('should reject timestamp outside valid window', async () => {
+      // Generate a token for a timestamp 60 seconds in the past (outside 30s window)
+      const timestamp = Math.floor(Date.now() / 1000) - 60
+      const nonce = randomUUID()
+      const validToken = await generateToken(timestamp, nonce)
+
+      const { authMiddleware } = await import('./auth')
+      const request = new NextRequest('http://localhost:3000/api/link', {
+        headers: {
+          'Authorization': `Bearer ${validToken}`,
+          'X-Nonce': nonce,
+          'X-Timestamp': timestamp.toString()
+        }
+      })
+
+      const response = await authMiddleware(request)
+
+      expect(response).toBeDefined()
+      expect(response?.status).toBe(401)
+      expect(response?.body).toEqual({ error: 'Timestamp outside valid window.' })
     })
 
     it('should reject replay attack (same nonce used twice)', async () => {
@@ -136,7 +200,8 @@ describe('auth middleware', () => {
       const request1 = new NextRequest('http://localhost:3000/api/link', {
         headers: {
           'Authorization': `Bearer ${validToken}`,
-          'X-Nonce': nonce
+          'X-Nonce': nonce,
+          'X-Timestamp': timestamp.toString()
         }
       })
       const response1 = await authMiddleware(request1)
@@ -146,7 +211,8 @@ describe('auth middleware', () => {
       const request2 = new NextRequest('http://localhost:3000/api/link', {
         headers: {
           'Authorization': `Bearer ${validToken}`,
-          'X-Nonce': nonce
+          'X-Nonce': nonce,
+          'X-Timestamp': timestamp.toString()
         }
       })
       const response2 = await authMiddleware(request2)
@@ -160,10 +226,12 @@ describe('auth middleware', () => {
 
       const { authMiddleware } = await import('./auth')
       const nonce = randomUUID()
+      const timestamp = Math.floor(Date.now() / 1000)
       const request = new NextRequest('http://localhost:3000/api/link', {
         headers: {
           'Authorization': 'Bearer some-token',
-          'X-Nonce': nonce
+          'X-Nonce': nonce,
+          'X-Timestamp': timestamp.toString()
         }
       })
 

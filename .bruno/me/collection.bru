@@ -20,7 +20,7 @@ script:pre-request {
   const { randomUUID } = require('crypto')
 
   const key = bru.getEnvVar("apiKey");
-  const epochSecond = Math.ceil(Date.now()/1000).toString();
+  const epochSecond = Math.floor(Date.now()/1000).toString();
   const nonce = randomUUID(); // Generate unique nonce for replay protection
 
   // Use HMAC-SHA512 instead of plain SHA512
@@ -30,4 +30,5 @@ script:pre-request {
   bru.setVar("xdata", message);
   bru.setVar("token", token);
   req.setHeader("X-Nonce", nonce);
+  req.setHeader("X-Timestamp", epochSecond);
 }
