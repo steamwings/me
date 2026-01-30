@@ -6,11 +6,8 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {
   faGithub,
-  faInstagram,
-  faMastodon,
+  faLinkedin,
   faSignalMessenger,
-  faSoundcloud,
-  faYoutube,
 } from '@fortawesome/free-brands-svg-icons'
 import {faEnvelope, faDollarSign} from '@fortawesome/free-solid-svg-icons'
 import { Destination } from 'lib/nav';
@@ -38,16 +35,22 @@ export default function Home() {
         <div className={
           styles.social
         }>
-          <a href="https://github.com/steamwings" aria-label="Github link"><FontAwesomeIcon size="lg"
-              icon={faGithub}/></a>
+          <a href="https://github.com/steamwings" aria-label="Github link">
+            <FontAwesomeIcon size="lg" icon={faGithub}/>
+          </a>
           <a href="https://signal.me/#eu/JMbjrhGqx/NJWDIGLJlFhYRMlkjJDfFwlIrsAEHEgMuW8hEs7o1JrLh7AsFfncFR" aria-label="Signal link">
-            <FontAwesomeIcon size="lg" icon={faSignalMessenger}/></a>
-          <a rel="me" href="https://weather.family/@zander" aria-label="Mastodon link"><FontAwesomeIcon size="lg"
-            icon={faMastodon}/></a>
-          <a href="mailto:contact@zweather.me" aria-label="email link"><FontAwesomeIcon size="lg"
-              icon={faEnvelope}/></a>
-          <a href="https://venmo.com/u/zweather" aria-label="Venmo link"><FontAwesomeIcon size="lg"
-              icon={faDollarSign}/></a>
+            <FontAwesomeIcon size="lg" icon={faSignalMessenger}/>
+          </a>
+          {/* <a rel="me" href="https://weather.family/@zander" aria-label="Mastodon link"><FontAwesomeIcon size="lg"
+            icon={faMastodon}/></a> */}
+          <a href="https://www.linkedin.com/in/zanderw/" aria-label="LinkedIn link">
+            <FontAwesomeIcon size="lg" icon={faLinkedin}/>
+          </a>
+          <a href="mailto:contact@zweather.me" aria-label="email link">
+            <FontAwesomeIcon size="lg" icon={faEnvelope}/>
+          </a>
+          <a href="https://venmo.com/u/zweather" aria-label="Venmo link">
+            <FontAwesomeIcon size="lg" icon={faDollarSign}/></a>
         </div>
 
         <div className={
